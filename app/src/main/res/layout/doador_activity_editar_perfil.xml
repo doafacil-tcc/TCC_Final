@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/corner_avatar_photo"
+    tools:context=".doador.DoadorEditarPerfil">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/Creme"
+        tools:context=".doador.DoadorEditarPerfil">
+
+
+        <TextView
+            android:id="@+id/txtTelefoneEditarPerfilDoador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="Telefone"
+            android:textColor="@color/Verde"
+            android:textSize="@dimen/Small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtCEPEditarPerfilDoador" />
+
+        <TextView
+            android:id="@+id/txtTituloEditarPerfilDoador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:text="Editar Perfil"
+            android:textColor="@color/Verde"
+            android:textSize="@dimen/Medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtNomeEditarPerfilDoador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Nome Completo"
+            android:textColor="@color/Verde"
+            android:textSize="@dimen/Small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnAvatarEditarPerfilDoador" />
+
+        <EditText
+            android:id="@+id/edtNomeEditarPerfilDoador"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Digite..."
+            android:textColor="@color/Cinza"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtNomeEditarPerfilDoador" />
+
+        <EditText
+            android:id="@+id/edtEnderecoEditarPerfilDoador"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Digite..."
+            android:textColor="@color/Cinza"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtEnderecoEditarPerfilDoador" />
+
+        <TextView
+            android:id="@+id/txtEnderecoEditarPerfilDoador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="Endereço"
+            android:textColor="@color/Verde"
+            android:textSize="@dimen/Small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtNomeEditarPerfilDoador" />
+
+        <TextView
+            android:id="@+id/txtCEPEditarPerfilDoador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="24dp"
+            android:text="CEP"
+            android:textColor="@color/Verde"
+            android:textSize="@dimen/Small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtEnderecoEditarPerfilDoador" />
+
+        <EditText
+            android:id="@+id/edtCEPEditarPerfilDoador"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:ems="10"
+            android:inputType="number"
+            android:hint="Digite..."
+            android:textColor="@color/Cinza"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtCEPEditarPerfilDoador" />
+
+        <EditText
+            android:id="@+id/edtTelefoneEditarPerfilDoador"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:ems="10"
+            android:inputType="number"
+            android:hint="Digite..."
+            android:textColor="@color/Cinza"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTelefoneEditarPerfilDoador" />
+
+        <Button
+            android:id="@+id/btnEnviarEditarPerfilDoador"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="32dp"
+            android:background="@color/Verde"
+            android:text="Enviar"
+            android:textColor="@color/Creme"
+            android:textSize="@dimen/Small"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtPasswordEditarPerfilDoador" />
+
+        <Button
+            android:id="@+id/btnAvatarEditarPerfilDoador"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/corner_avatar_photo"
+            android:text="Trocar Imagem"
+            android:textColor="@color/Creme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTituloEditarPerfilDoador" />
+
+        <TextView
+            android:id="@+id/txtPasswordEditarPerfilDoador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="Nova Senha"
+            android:textColor="@color/Verde"
+            android:textSize="@dimen/Small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtTelefoneEditarPerfilDoador" />
+
+        <EditText
+            android:id="@+id/edtPasswordEditarPerfilDoador"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:inputType="textPassword"
+            android:hint="Insira sua Nova Senha"
+            android:textColor="@color/Cinza"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtPasswordEditarPerfilDoador" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ImgAvatarEditarPerfilDoador"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintBottom_toBottomOf="@+id/btnAvatarEditarPerfilDoador"
+            app:layout_constraintEnd_toEndOf="@+id/btnAvatarEditarPerfilDoador"
+            app:layout_constraintStart_toStartOf="@+id/btnAvatarEditarPerfilDoador"
+            app:layout_constraintTop_toTopOf="@+id/btnAvatarEditarPerfilDoador" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

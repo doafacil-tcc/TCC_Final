@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.tcc.doador.DoadorNewLivroFragment"
+    android:background="@color/Creme">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txtAddImagemLivro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            android:text="Adicione Fotos:"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtDescricaoLivro" />
+
+        <EditText
+            android:id="@+id/edtDescricaoLivro"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginRight="25dp"
+            android:background="@color/Branco"
+            android:ems="10"
+            android:hint="  Descreva as caracteristicas e história..."
+            android:inputType="textPersonName"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDescricaoLivro" />
+
+        <TextView
+            android:id="@+id/txtDescricaoLivro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:text="Descreva seu item:"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spnCondicaoLivro" />
+
+        <Spinner
+            android:id="@+id/spnCondicaoLivro"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginRight="25dp"
+            android:background="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtCondicaoLivro" />
+
+        <TextView
+            android:id="@+id/txtCondicaoLivro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="25dp"
+            android:text="Condição:"
+            android:textSize="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spnQuantidadeLivro" />
+
+        <TextView
+            android:id="@+id/txtTituloLivro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Novo Livro"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtTipoLivro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:text="Tipo:"
+            android:textSize="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTituloLivro" />
+
+        <Spinner
+            android:id="@+id/spnTipoLivro"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:background="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTipoLivro" />
+
+        <Button
+            android:id="@+id/btnAddImagemLivro1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/BtnImagem"
+            android:text="Adicionar Imagem..."
+            android:textColor="@color/Laranja_Escuro"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtAddImagemLivro" />
+
+        <ImageView
+            android:id="@+id/imgAddImagemLivro1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintBottom_toBottomOf="@+id/btnAddImagemLivro1"
+            app:layout_constraintEnd_toEndOf="@+id/btnAddImagemLivro1"
+            app:layout_constraintStart_toStartOf="@+id/btnAddImagemLivro1"
+            app:layout_constraintTop_toTopOf="@+id/btnAddImagemLivro1" />
+
+        <Button
+            android:id="@+id/btnAddImagemLivro2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/BtnImagem"
+            android:text="Adicionar Imagem..."
+            android:textColor="@color/Laranja_Escuro"
+            app:layout_constraintEnd_toStartOf="@+id/btnAddImagemLivro3"
+            app:layout_constraintStart_toEndOf="@+id/btnAddImagemLivro1"
+            app:layout_constraintTop_toBottomOf="@+id/txtAddImagemLivro" />
+
+        <ImageView
+            android:id="@+id/imgAddImagemLivro2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintBottom_toBottomOf="@+id/btnAddImagemLivro2"
+            app:layout_constraintEnd_toEndOf="@+id/btnAddImagemLivro2"
+            app:layout_constraintStart_toStartOf="@+id/btnAddImagemLivro2"
+            app:layout_constraintTop_toTopOf="@+id/btnAddImagemLivro2" />
+
+        <Button
+            android:id="@+id/btnAddImagemLivro3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="40dp"
+            android:background="@color/BtnImagem"
+            android:text="Adicionar Imagem..."
+            android:textColor="@color/Laranja_Escuro"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtAddImagemLivro" />
+
+        <ImageView
+            android:id="@+id/imgAddImagemLivro3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintBottom_toBottomOf="@+id/btnAddImagemLivro3"
+            app:layout_constraintEnd_toEndOf="@+id/btnAddImagemLivro3"
+            app:layout_constraintStart_toStartOf="@+id/btnAddImagemLivro3"
+            app:layout_constraintTop_toTopOf="@+id/btnAddImagemLivro3" />
+
+        <Button
+            android:id="@+id/btnEnviarLivro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="40dp"
+            android:background="@color/Laranja_Escuro"
+            android:text="Enviar"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnAddImagemLivro2" />
+
+        <TextView
+            android:id="@+id/txtQuantidadeLivro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:text="Quantidade:"
+            android:textSize="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spnTipoLivro" />
+
+        <Spinner
+            android:id="@+id/spnQuantidadeLivro"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:background="@color/Branco"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtQuantidadeLivro" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+    </FrameLayout>

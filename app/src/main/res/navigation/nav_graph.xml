@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/newDoacoesFragment">
+    <fragment
+        android:id="@+id/newDoacoesFragment"
+        android:name="com.example.tcc.doador.DoadorNewDoacoesFragment"
+        android:label="fragment_new_doacoes"
+        tools:layout="@layout/doador_fragment_new_doacoes">
+        <action
+            android:id="@+id/action_newDoacoesFragment_to_newLivrosFragment"
+            app:destination="@id/newLivrosFragment"
+            app:enterAnim="@anim/slide_in_right"/>
+        <action
+            android:id="@+id/action_newDoacoesFragment_to_newRoupaFragment"
+            app:destination="@id/newRoupaFragment"
+            app:enterAnim="@anim/slide_in_right"/>
+        <action
+            android:id="@+id/action_newDoacoesFragment_to_newMoveisFragment"
+            app:destination="@id/newMoveisFragment"
+            app:enterAnim="@anim/slide_in_right"/>
+        <action
+            android:id="@+id/action_newDoacoesFragment_to_newBrinquedoFragment"
+            app:destination="@id/newBrinquedoFragment"
+            app:enterAnim="@anim/slide_in_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/newLivrosFragment"
+        android:name="com.example.tcc.doador.DoadorNewLivroFragment"
+        android:label="fragment_new_livros"
+        tools:layout="@layout/doador_fragment_new_livros" >
+        <action
+            android:id="@+id/action_newLivrosFragment_to_doacaoConcluidaFragment"
+            app:destination="@id/doacaoConcluidaFragment"
+            app:enterAnim="@anim/slide_in_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/newRoupaFragment"
+        android:name="com.example.tcc.doador.DoadorNewRoupaFragment"
+        android:label="fragment_new_roupa"
+        tools:layout="@layout/doador_fragment_new_roupa" >
+        <action
+            android:id="@+id/action_newRoupaFragment_to_doacaoConcluidaFragment"
+            app:destination="@id/doacaoConcluidaFragment"
+            app:enterAnim="@anim/slide_in_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/newBrinquedoFragment"
+        android:name="com.example.tcc.doador.DoadorNewBrinquedoFragment"
+        android:label="fragment_new_brinquedo"
+        tools:layout="@layout/doador_fragment_new_brinquedo" >
+        <action
+            android:id="@+id/action_newBrinquedoFragment_to_doacaoConcluidaFragment"
+            app:destination="@id/doacaoConcluidaFragment"
+            app:enterAnim="@anim/slide_in_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/newMoveisFragment"
+        android:name="com.example.tcc.doador.DoadorNewMoveisFragment"
+        android:label="fragment_new_moveis"
+        tools:layout="@layout/doador_fragment_new_moveis" >
+        <action
+            android:id="@+id/action_newMoveisFragment_to_doacaoConcluidaFragment"
+            app:destination="@id/doacaoConcluidaFragment"
+            app:enterAnim="@anim/slide_in_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/doacaoUnicaFragment"
+        android:name="com.example.tcc.doador.DoadorDoacaoUnicaFragment"
+        android:label="fragment_doacao_unica"
+        tools:layout="@layout/doador_fragment_doacao_unica" />
+    <fragment
+        android:id="@+id/doacoesCampanhaFragment"
+        android:name="com.example.tcc.doador.DoadorDoacoesCampanhaFragment"
+        android:label="fragment_doacoes_campanha"
+        tools:layout="@layout/doador_fragment_doacoes_campanha" />
+    <fragment
+        android:id="@+id/doacaoConcluidaFragment"
+        android:name="com.example.tcc.doador.DoadorDoacaoConcluidaFragment"
+        android:label="fragment_doacao_concluida"
+        tools:layout="@layout/doador_fragment_doacao_concluida" >
+        <action
+            android:id="@+id/action_doacaoConcluidaFragment_to_newDoacoesFragment"
+            app:destination="@id/newDoacoesFragment"
+            app:enterAnim="@anim/slide_in_left"/>
+    </fragment>
+</navigation>

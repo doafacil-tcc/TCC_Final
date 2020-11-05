@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "59791545129",
+    "firebase_url": "https://tcc-doafacil.firebaseio.com",
+    "project_id": "tcc-doafacil",
+    "storage_bucket": "tcc-doafacil.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59791545129:android:4a30a8f3bb7bc8c2ec9d38",
+        "android_client_info": {
+          "package_name": "com.example.tcc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "59791545129-1anv2stphcq0o9heo2ddrbhub8cn79sq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFxF_-CunUgSkOWO4eJA7zLpp7SR4cMoQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "59791545129-1anv2stphcq0o9heo2ddrbhub8cn79sq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.tcc">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ong.OngSelecaoDoacaoUnicaRoupa"></activity>
+        <activity android:name=".ong.OngSolicitarCampanha" />
+        <activity android:name=".ong.OngSelecaoDoacaoUnicaBrinquedo" />
+        <activity android:name=".ong.OngSelecaoDoacaoUnicaLivros" />
+        <activity android:name=".ong.OngSelecaoDoacaoUnicaMoveis" />
+        <activity android:name=".ong.OngSolicitarDoacaoUnica" />
+        <activity android:name=".doador.DoadorDoacaoFinalizada" />
+        <activity android:name=".ong.OngEscolhaTipoDoacao" />
+        <activity android:name=".doador.DoadorEditarPerfil" />
+        <activity android:name=".ong.OngEditarPerfil" />
+        <activity android:name=".inicio.CadastroOngActivity" />
+        <activity android:name=".inicio.CadastroDoadorActivity" />
+        <activity android:name=".doador.DoadorMenuOngs" />
+        <activity android:name=".doador.DoadorMeusDados" />
+        <activity android:name=".ong.OngMeusDados" />
+        <activity android:name=".inicio.LoginActivityOng" />
+        <activity android:name=".inicio.LoginActivityDoador" />
+        <activity android:name=".inicio.EscolhaInicio" />
+        <activity android:name=".ong.OngMainActivity" />
+        <activity android:name=".doador.DoadorMainActivity" />
+        <activity android:name=".inicio.TelaInicio">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

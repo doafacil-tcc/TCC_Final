@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/corner_avatar_photo"
+    tools:context=".ong.OngEditarPerfil">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/Creme"
+        tools:context=".ong.OngEditarPerfil">
+
+
+        <TextView
+            android:id="@+id/txtTelefoneEditarPerfilOng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="Telefone"
+            android:textColor="@color/Verde"
+            android:textSize="@dimen/Small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtCEPEditarPerfilOng" />
+
+        <TextView
+            android:id="@+id/txtTituloEditarPerfilOng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:text="Editar Perfil"
+            android:textColor="@color/Verde"
+            android:textSize="@dimen/Medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtNomeEditarPerfilOng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Nome Completo da Instituição"
+            android:textColor="@color/Verde"
+            android:textSize="@dimen/Small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnAvatarEditarPerfilOng" />
+
+        <EditText
+            android:id="@+id/edtNomeEditarPerfilOng"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Digite..."
+            android:textColor="@color/Cinza"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtNomeEditarPerfilOng" />
+
+        <EditText
+            android:id="@+id/edtEnderecoEditarPerfilOng"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Digite..."
+            android:textColor="@color/Cinza"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtEnderecoEditarPerfilOng" />
+
+        <TextView
+            android:id="@+id/txtCNPJEditarPerfilOng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="24dp"
+            android:text="CNPJ"
+            android:textColor="@color/Verde"
+            android:textSize="@dimen/Small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtNomeEditarPerfilOng" />
+
+        <TextView
+            android:id="@+id/txtEnderecoEditarPerfilOng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="24dp"
+            android:text="Endereço"
+            android:textColor="@color/Verde"
+            android:textSize="@dimen/Small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtCNPJEditarPerfilOng" />
+
+        <TextView
+            android:id="@+id/txtCEPEditarPerfilOng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="24dp"
+            android:text="CEP"
+            android:textColor="@color/Verde"
+            android:textSize="@dimen/Small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtEnderecoEditarPerfilOng" />
+
+        <EditText
+            android:id="@+id/edtCNPJEditarPerfilOng"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:ems="10"
+            android:inputType="number"
+            android:hint="Digite..."
+            android:textColor="@color/Cinza"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtCNPJEditarPerfilOng" />
+
+        <EditText
+            android:id="@+id/edtCEPEditarPerfilOng"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:ems="10"
+            android:inputType="number"
+            android:hint="Digite..."
+            android:textColor="@color/Cinza"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtCEPEditarPerfilOng" />
+
+        <EditText
+            android:id="@+id/edtTelefoneEditarPerfilOng"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:ems="10"
+            android:inputType="number"
+            android:hint="Digite..."
+            android:textColor="@color/Cinza"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTelefoneEditarPerfilOng" />
+
+        <Button
+            android:id="@+id/btnEnviarEditarPerfilOng"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="32dp"
+            android:background="@color/Verde"
+            android:text="Enviar"
+            android:textColor="@color/Creme"
+            android:textSize="@dimen/Small"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtSiteEditarPerfilOng" />
+
+        <Button
+            android:id="@+id/btnAvatarEditarPerfilOng"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/corner_avatar_photo"
+            android:text="Inserir Imagem"
+            android:textColor="@color/Creme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTituloEditarPerfilOng" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ImgAvatarEditarPerfilOng"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintBottom_toBottomOf="@+id/btnAvatarEditarPerfilOng"
+            app:layout_constraintEnd_toEndOf="@+id/btnAvatarEditarPerfilOng"
+            app:layout_constraintStart_toStartOf="@+id/btnAvatarEditarPerfilOng"
+            app:layout_constraintTop_toTopOf="@+id/btnAvatarEditarPerfilOng" />
+
+        <TextView
+            android:id="@+id/txtPasswordEditarPerfilOng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="24dp"
+            android:text="Insira sua Nova Senha"
+            android:textColor="@color/Verde"
+            android:textSize="@dimen/Small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtTelefoneEditarPerfilOng" />
+
+        <EditText
+            android:id="@+id/edtPasswordEditarPerfilOng"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:inputType="textPassword"
+            android:hint="Insira sua Senha"
+            android:textColor="@color/Cinza"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtPasswordEditarPerfilOng" />
+
+        <TextView
+            android:id="@+id/txtSiteEditarPerfilOng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="24dp"
+            android:text="Site da Instituição"
+            android:textColor="@color/Verde"
+            android:textSize="@dimen/Small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtPasswordEditarPerfilOng" />
+
+        <EditText
+            android:id="@+id/edtSiteEditarPerfilOng"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:hint="Insira o site..."
+            android:textColor="@color/Cinza"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSiteEditarPerfilOng" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

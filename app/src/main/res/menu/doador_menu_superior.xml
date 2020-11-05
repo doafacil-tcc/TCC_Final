@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/meus_dados_doador"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="Meus Dados" />
+    <item
+        android:id="@+id/mensagens"
+        android:icon="@drawable/ic_baseline_chat_24"
+        android:title="Chat"/>
+    <item
+        android:id="@+id/ongs"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="ONGs" />
+    <item
+        android:id="@+id/status_doacao"
+        android:icon="@drawable/ic_baseline_history_24"
+        android:title="Status Doação" />
+    <item
+        android:id="@+id/duvidas_frequentes"
+        android:icon="@drawable/ic_baseline_question_answer_24"
+        android:title="Dúvidas Frequentes" />
+    <item
+        android:id="@+id/sobre"
+        android:icon="@drawable/ic_baseline_info_24"
+        android:title="Sobre" />
+    <item
+        android:id="@+id/sair"
+        android:icon="@drawable/ic_baseline_exit_to_app_24"
+        android:title="Sair" />
+</menu>

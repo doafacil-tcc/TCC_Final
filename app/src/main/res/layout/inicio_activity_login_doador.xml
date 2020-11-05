@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Creme"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        tools:context=".LoginActivityDoador"
+        android:orientation="vertical"
+        android:padding="@dimen/Small">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="185dp"
+            android:layout_gravity="center"
+            android:src="@drawable/nome_doafacil" />
+
+        <TextView
+            android:id="@+id/area"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Área do Doador:"
+            android:textColor="@color/Verde"
+            android:paddingBottom="@dimen/Medium"
+            android:textSize="15dp"
+            />
+
+        <TextView
+            android:text="@string/lbl_login_email"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textColor="@color/Verde"
+            android:textSize="@dimen/Small" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edtLogin_doador"
+            android:inputType="textEmailAddress"
+            style="@style/edt_Style"
+            android:paddingLeft="8dp"/>
+
+        <TextView
+            android:text="@string/lbl_senha"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textColor="@color/Verde"
+            android:textSize="@dimen/Small"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edtPassword_doador"
+            android:inputType="textPassword"
+            android:paddingLeft="8dp"
+            style="@style/edt_Style"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_login"
+            android:id="@+id/btnLogin_doador"
+            android:textColor="@color/Creme"
+            android:background="@color/Laranja_Escuro"
+            android:textSize="@dimen/Small"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/btnNovoDoador"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:textColor="@color/Verde"
+            android:text="Novo aqui? Cadastre-se AQUI..."
+            android:background="@color/Creme"
+            android:textStyle="bold"/>
+
+
+
+
+    </LinearLayout>
+
+</ScrollView>

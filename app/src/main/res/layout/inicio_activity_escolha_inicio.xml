@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/Creme"
+    android:padding="@dimen/Medium">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:src="@drawable/nome_doafacil"
+        tools:layout_editor_absoluteX="-28dp"
+        tools:layout_editor_absoluteY="55dp"
+        android:id="@+id/image"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnDoador"
+        app:layout_constraintTop_toBottomOf="@id/image"
+        android:background="@color/Laranja_Escuro"
+        android:textColor="@color/Creme"
+        android:text="Doador"
+        android:textSize="@dimen/Small"
+        android:layout_marginBottom="@dimen/Small"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnONG"
+        app:layout_constraintTop_toBottomOf="@id/btnDoador"
+        android:layout_marginTop="@dimen/Small"
+        android:background="@color/Laranja_Escuro"
+        android:textColor="@color/Creme"
+        android:text="ONG"
+        android:textSize="@dimen/Small"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

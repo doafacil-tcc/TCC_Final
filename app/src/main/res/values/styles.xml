@@ -1,0 +1,16 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/Laranja_Normal</item>
+        <item name="colorPrimaryDark">@color/Laranja_Normal</item>
+        <item name="colorAccent">@color/Preto</item>
+    </style>
+
+    <style name="edt_Style">
+        <item name="android:textColor">@color/Preto</item>
+        <item name="android:layout_marginBottom">@dimen/Small</item>
+        <item name="android:textSize">@dimen/Small</item>
+    </style>
+
+</resources>

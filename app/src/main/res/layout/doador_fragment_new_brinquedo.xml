@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.tcc.doador.DoadorNewBrinquedoFragment"
+    android:background="@color/Creme">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txtAddImagemBrinquedo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="20dp"
+                android:text="Adicione Fotos:"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtDescricaoBrinquedo" />
+
+            <EditText
+                android:id="@+id/edtDescricaoBrinquedo"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginRight="25dp"
+                android:background="@color/Branco"
+                android:ems="10"
+                android:hint="  Descreva as caracteristicas e história..."
+                android:inputType="textPersonName"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtDescricaoBrinquedo" />
+
+            <TextView
+                android:id="@+id/txtDescricaoBrinquedo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="20dp"
+                android:text="Descreva seu item:"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spnCondicaoBrinquedo" />
+
+            <Spinner
+                android:id="@+id/spnCondicaoBrinquedo"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginRight="25dp"
+                android:background="#FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtCondicaoBrinquedo" />
+
+            <TextView
+                android:id="@+id/txtCondicaoBrinquedo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="24dp"
+                android:text="Condição:"
+                android:textSize="25dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spnQuantidadeBrinquedo" />
+
+            <TextView
+                android:id="@+id/txtTituloBrinquedo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Novo Brinquedo"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtTipoBrinquedo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:text="Tipo:"
+                android:textSize="25dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtTituloBrinquedo" />
+
+            <EditText
+                android:id="@+id/edtTipoBrinquedo"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="25dp"
+                android:hint="Tipo de Brinquedo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtTipoBrinquedo" />
+
+            <Button
+                android:id="@+id/btnAddImagemBrinquedo1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/BtnImagem"
+                android:text="Adicionar Imagem..."
+                android:textColor="@color/Laranja_Escuro"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtAddImagemBrinquedo" />
+
+            <ImageView
+                android:id="@+id/imgAddImagemBrinquedo1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:layout_constraintBottom_toBottomOf="@+id/btnAddImagemBrinquedo1"
+                app:layout_constraintEnd_toEndOf="@+id/btnAddImagemBrinquedo1"
+                app:layout_constraintStart_toStartOf="@+id/btnAddImagemBrinquedo1"
+                app:layout_constraintTop_toTopOf="@+id/btnAddImagemBrinquedo1" />
+
+            <Button
+                android:id="@+id/btnAddImagemBrinquedo2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/BtnImagem"
+                android:text="Adicionar Imagem..."
+                android:textColor="@color/Laranja_Escuro"
+                app:layout_constraintEnd_toStartOf="@+id/btnAddImagemBrinquedo3"
+                app:layout_constraintStart_toEndOf="@+id/btnAddImagemBrinquedo1"
+                app:layout_constraintTop_toBottomOf="@+id/txtAddImagemBrinquedo" />
+
+            <ImageView
+                android:id="@+id/imgAddImagemBrinquedo2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:layout_constraintBottom_toBottomOf="@+id/btnAddImagemBrinquedo2"
+                app:layout_constraintEnd_toEndOf="@+id/btnAddImagemBrinquedo2"
+                app:layout_constraintStart_toStartOf="@+id/btnAddImagemBrinquedo2"
+                app:layout_constraintTop_toTopOf="@+id/btnAddImagemBrinquedo2" />
+
+            <Button
+                android:id="@+id/btnAddImagemBrinquedo3"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="40dp"
+                android:background="@color/BtnImagem"
+                android:text="Adicionar Imagem..."
+                android:textColor="@color/Laranja_Escuro"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtAddImagemBrinquedo" />
+
+            <ImageView
+                android:id="@+id/imgAddImagemBrinquedo3"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:layout_constraintBottom_toBottomOf="@+id/btnAddImagemBrinquedo3"
+                app:layout_constraintEnd_toEndOf="@+id/btnAddImagemBrinquedo3"
+                app:layout_constraintStart_toStartOf="@+id/btnAddImagemBrinquedo3"
+                app:layout_constraintTop_toTopOf="@+id/btnAddImagemBrinquedo3" />
+
+            <Button
+                android:id="@+id/btnEnviarBrinquedo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="40dp"
+                android:background="@color/Laranja_Escuro"
+                android:text="Enviar"
+                android:textColor="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnAddImagemBrinquedo2" />
+
+            <TextView
+                android:id="@+id/txtQuantidadeBrinquedo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="25dp"
+                android:text="Quantidade:"
+                android:textSize="25dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtExemploTipoBrinquedo" />
+
+            <Spinner
+                android:id="@+id/spnQuantidadeBrinquedo"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:background="@color/Branco"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtQuantidadeBrinquedo" />
+
+            <TextView
+                android:id="@+id/txtExemploTipoBrinquedo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="8dp"
+                android:text="Ex: Carrinho, Boneca, Ursinho..."
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtTipoBrinquedo" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</FrameLayout>

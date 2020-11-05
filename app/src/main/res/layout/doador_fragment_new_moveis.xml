@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.tcc.doador.DoadorNewMoveisFragment"
+    android:background="@color/Creme">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txtAddImagemMoveis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="20dp"
+                android:text="Adicione Fotos:"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtDescricaoMoveis" />
+
+            <EditText
+                android:id="@+id/edtDescricaoMoveis"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginRight="25dp"
+                android:background="@color/Branco"
+                android:ems="10"
+                android:hint="  Descreva as caracteristicas e história..."
+                android:inputType="textPersonName"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtDescricaoMoveis" />
+
+            <TextView
+                android:id="@+id/txtDescricaoMoveis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="20dp"
+                android:text="Descreva seu item:"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spnCondicaoMoveis" />
+
+            <Spinner
+                android:id="@+id/spnCondicaoMoveis"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginRight="25dp"
+                android:background="#FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtCondicaoMoveis" />
+
+            <TextView
+                android:id="@+id/txtCondicaoMoveis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="24dp"
+                android:text="Condição:"
+                android:textSize="25dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spnQuantidadeMoveis" />
+
+            <TextView
+                android:id="@+id/txtTituloMoveis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Novo Móvel"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtTipoMoveis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:text="Tipo:"
+                android:textSize="25dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtTituloMoveis" />
+
+            <EditText
+                android:id="@+id/edtTipoMoveis"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="25dp"
+                android:hint="Tipo de Móvel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtTipoMoveis" />
+
+            <Button
+                android:id="@+id/btnAddImagemMoveis1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/BtnImagem"
+                android:text="Adicionar Imagem..."
+                android:textColor="@color/Laranja_Escuro"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtAddImagemMoveis" />
+
+            <ImageView
+                android:id="@+id/imgAddImagemMoveis1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:layout_constraintBottom_toBottomOf="@+id/btnAddImagemMoveis1"
+                app:layout_constraintEnd_toEndOf="@+id/btnAddImagemMoveis1"
+                app:layout_constraintStart_toStartOf="@+id/btnAddImagemMoveis1"
+                app:layout_constraintTop_toTopOf="@+id/btnAddImagemMoveis1" />
+
+            <Button
+                android:id="@+id/btnAddImagemMoveis2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/BtnImagem"
+                android:text="Adicionar Imagem..."
+                android:textColor="@color/Laranja_Escuro"
+                app:layout_constraintEnd_toStartOf="@+id/btnAddImagemMoveis3"
+                app:layout_constraintStart_toEndOf="@+id/btnAddImagemMoveis1"
+                app:layout_constraintTop_toBottomOf="@+id/txtAddImagemMoveis" />
+
+            <ImageView
+                android:id="@+id/imgAddImagemMoveis2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:layout_constraintBottom_toBottomOf="@+id/btnAddImagemMoveis2"
+                app:layout_constraintEnd_toEndOf="@+id/btnAddImagemMoveis2"
+                app:layout_constraintStart_toStartOf="@+id/btnAddImagemMoveis2"
+                app:layout_constraintTop_toTopOf="@+id/btnAddImagemMoveis2" />
+
+            <Button
+                android:id="@+id/btnAddImagemMoveis3"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="40dp"
+                android:background="@color/BtnImagem"
+                android:text="Adicionar Imagem..."
+                android:textColor="@color/Laranja_Escuro"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtAddImagemMoveis" />
+
+            <ImageView
+                android:id="@+id/imgAddImagemMoveis3"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:layout_constraintBottom_toBottomOf="@+id/btnAddImagemMoveis3"
+                app:layout_constraintEnd_toEndOf="@+id/btnAddImagemMoveis3"
+                app:layout_constraintStart_toStartOf="@+id/btnAddImagemMoveis3"
+                app:layout_constraintTop_toTopOf="@+id/btnAddImagemMoveis3" />
+
+            <Button
+                android:id="@+id/btnEnviarMoveis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="40dp"
+                android:background="@color/Laranja_Escuro"
+                android:text="Enviar"
+                android:textColor="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnAddImagemMoveis2" />
+
+            <TextView
+                android:id="@+id/txtQuantidadeMoveis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="25dp"
+                android:text="Quantidade:"
+                android:textSize="25dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtExemploTipoMoveis" />
+
+            <Spinner
+                android:id="@+id/spnQuantidadeMoveis"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:background="@color/Branco"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtQuantidadeMoveis" />
+
+            <TextView
+                android:id="@+id/txtExemploTipoMoveis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="8dp"
+                android:text="Ex: Mesa, Cadeira, Colchão..."
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtTipoMoveis" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</FrameLayout>

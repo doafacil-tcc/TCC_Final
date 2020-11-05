@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/Creme"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgDoacao"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    <TextView
+        android:id="@+id/txtTipo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="Titulo"
+        android:textColor="@color/Verde"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgDoacao"
+        app:layout_constraintTop_toTopOf="@+id/imgDoacao" />
+
+    <TextView
+        android:id="@+id/txtCat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Detalhe Doacao"
+        android:textColor="@color/Verde"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/txtTipo"
+        app:layout_constraintStart_toStartOf="@+id/txtTipo"
+        app:layout_constraintTop_toBottomOf="@+id/txtTipo" />
+
+    <TextView
+        android:id="@+id/txtQuantidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Quantidade"
+        app:layout_constraintStart_toStartOf="@+id/txtCat"
+        app:layout_constraintTop_toBottomOf="@+id/txtCat" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

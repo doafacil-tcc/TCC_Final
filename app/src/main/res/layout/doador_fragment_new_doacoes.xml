@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.tcc.doador.DoadorNewDoacoesFragment"
+    android:background="@color/Creme">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/txt_doar_hoje"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:text="O que você deseja doar hoje?"
+            android:textColor="@color/Verde"
+            android:textSize="28dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/imabtnRoupa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_doar_hoje"
+            android:layout_marginStart="60dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="50dp"
+            android:adjustViewBounds="true"
+            android:background="@color/Creme"
+            android:src="@drawable/roupa_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_doar_hoje"
+            tools:adjustViewBounds="true" />
+
+        <TextView
+            android:id="@+id/txtRoupa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/imabtnRoupa"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="10dp"
+            android:text="Roupa"
+            android:textSize="25dp"
+            app:layout_constraintEnd_toEndOf="@+id/imabtnRoupa"
+            app:layout_constraintStart_toStartOf="@+id/imabtnRoupa"
+            app:layout_constraintTop_toBottomOf="@+id/imabtnRoupa" />
+
+        <TextView
+            android:id="@+id/txtToy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/imabtnRoupa"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="10dp"
+            android:text="Brinquedo"
+            android:textSize="25dp"
+            app:layout_constraintEnd_toEndOf="@+id/imabtnToy"
+            app:layout_constraintStart_toStartOf="@+id/imabtnToy"
+            app:layout_constraintTop_toBottomOf="@+id/imabtnToy" />
+
+
+        <ImageButton
+            android:id="@+id/imabtnToy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginRight="60dp"
+            android:background="@color/Creme"
+            android:src="@drawable/brinquedo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_doar_hoje" />
+
+        <ImageButton
+            android:id="@+id/imabtnLivros"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@color/Creme"
+            android:src="@drawable/book"
+            app:layout_constraintEnd_toEndOf="@+id/imabtnRoupa"
+            app:layout_constraintStart_toStartOf="@+id/imabtnRoupa"
+            app:layout_constraintTop_toBottomOf="@+id/txtRoupa" />
+
+        <ImageButton
+            android:id="@+id/imabtnMoveis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@color/Creme"
+            android:src="@drawable/moveis"
+            app:layout_constraintEnd_toEndOf="@+id/imabtnToy"
+            app:layout_constraintStart_toStartOf="@+id/imabtnToy"
+            app:layout_constraintTop_toBottomOf="@+id/txtToy" />
+
+        <TextView
+            android:id="@+id/txtLivros"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Livros"
+            android:textSize="25dp"
+            app:layout_constraintEnd_toEndOf="@+id/imabtnLivros"
+            app:layout_constraintStart_toStartOf="@+id/imabtnLivros"
+            app:layout_constraintTop_toBottomOf="@+id/imabtnLivros" />
+
+        <TextView
+            android:id="@+id/txtMoveis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Móveis"
+            android:textSize="25dp"
+            app:layout_constraintEnd_toEndOf="@+id/imabtnMoveis"
+            app:layout_constraintStart_toStartOf="@+id/imabtnMoveis"
+            app:layout_constraintTop_toBottomOf="@+id/imabtnMoveis" />
+
+        <Button
+            android:id="@+id/btnOutros"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="50dp"
+            android:background="@color/Creme"
+            android:text="Outros"
+            android:textColor="@color/Verde"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtMoveis" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

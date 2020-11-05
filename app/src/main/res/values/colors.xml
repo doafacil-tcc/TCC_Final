@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="Laranja_Escuro">#FF8C00</color>
+    <color name="Laranja_Normal">#FFA500</color>
+    <color name="Creme">#FFEFD5</color>
+    <color name="Verde">#4F7942</color>
+    <color name="Branco">#FFFFFF</color>
+    <color name="Preto">#000000</color>
+    <color name="Cinza">#787676</color>
+    <color name="BtnImagem">#34FFA500</color>
+
+</resources>

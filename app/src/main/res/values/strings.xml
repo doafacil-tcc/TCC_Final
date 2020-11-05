@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">DoaFacilApp</string>
+    <string name="DoaFacil">Doa Fácil</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="lbl_login_email">Email</string>
+    <string name="lbl_senha">Senha</string>
+    <string name="btn_login">Entrar</string>
+    <string name="lbl_sair">Sair</string>
+    <string name="title_activity_pessoa_doador">PessoaDoadorActivity</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+
+    <string-array name="spnTipoRoupaDoacao">
+        <item>Escolha...</item>
+        <item>Camiseta</item>
+        <item>Casaco Inverno</item>
+        <item>Calça</item>
+        <item>Bermuda/Shorts</item>
+        <item>Par de Meia</item>
+        <item>Roupa Íntima</item>
+        <item>Calçado</item>
+        <item>Boné/Chapéu</item>
+        <item>Parte Superior</item>
+        <item>Parte Inferior</item>
+    </string-array>
+
+    <string-array name="spnCategoria">
+        <item>Escolha...</item>
+        <item>Roupas</item>
+        <item>Brinquedos</item>
+        <item>Livros</item>
+        <item>Móveis</item>
+        <item>Outros</item>
+
+    </string-array>
+
+    <string-array name="spnTipoLivroDoacao">
+        <item>Escolha...</item>
+        <item>Educativo</item>
+        <item>Infantil</item>
+        <item>Colorir</item>
+        <item>Revista</item>
+        <item>Entreterimento (Romance, Auto-ajuda, Ficção...)</item>
+        <item>Religioso</item>
+    </string-array>
+
+    <string-array name="spnCondicaoDoacao">
+        <item>Escolha...</item>
+        <item>Novo(a)</item>
+        <item>Semi-novo(a)</item>
+        <item>Usado(a)</item>
+    </string-array>
+
+    <string-array name="spnQuantidadeDoacao">
+        <item>Escolha...</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10+</item>
+    </string-array>
+
+</resources>

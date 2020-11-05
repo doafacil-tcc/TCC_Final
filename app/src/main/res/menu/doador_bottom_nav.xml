@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/doacaoUnicaFragment"
+        android:icon="@drawable/doacoes"
+        android:title="Doações"/>
+    <item
+        android:id="@+id/newDoacoesFragment"
+        android:icon="@drawable/add"
+        android:title="Nova Doação"/>
+    <item
+        android:id="@+id/doacoesCampanhaFragment"
+        android:icon="@drawable/campanhas"
+        android:title="Camapnhas"/>
+
+</menu>

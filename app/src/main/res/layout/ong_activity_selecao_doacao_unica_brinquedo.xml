@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ong.OngSelecaoDoacaoUnicaBrinquedo"
+    android:background="@color/Creme">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txtCategoria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="25dp"
+                android:text="Categoria:"
+                android:textColor="@color/Verde"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgSelecaoBrinquedoOng2" />
+
+            <TextView
+                android:id="@+id/txtCondicao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Condição:"
+                android:textColor="@color/Verde"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/txtCategoria"
+                app:layout_constraintTop_toBottomOf="@+id/txtCategoria" />
+
+            <TextView
+                android:id="@+id/txtTipo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Tipo:"
+                android:textColor="@color/Verde"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/txtCondicao"
+                app:layout_constraintTop_toBottomOf="@+id/txtCondicao" />
+
+            <TextView
+                android:id="@+id/txtQuantidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Quantidade:"
+                android:textColor="@color/Verde"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/txtTipo"
+                app:layout_constraintTop_toBottomOf="@+id/txtTipo" />
+
+            <TextView
+                android:id="@+id/txtDescricao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Descrição:"
+                android:textColor="@color/Verde"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/txtQuantidade"
+                app:layout_constraintTop_toBottomOf="@+id/txtQuantidade" />
+
+            <TextView
+                android:id="@+id/txtDoador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Doador:"
+                android:textColor="@color/Verde"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/txtSelecaoBrinquedoOngDescrição"
+                app:layout_constraintTop_toBottomOf="@+id/txtSelecaoBrinquedoOngDescrição" />
+
+            <TextView
+                android:id="@+id/txtEndereço"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Endereço:"
+                android:textColor="@color/Verde"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/txtDoador"
+                app:layout_constraintTop_toBottomOf="@+id/txtDoador" />
+
+            <Button
+                android:id="@+id/btnAceitarDoacaoBrinquedo"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp"
+                android:background="@color/Laranja_Escuro"
+                android:text="Aceitar Doação"
+                android:textColor="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtSelecaoBrinquedoOngEndereco" />
+
+            <ImageView
+                android:id="@+id/imgSelecaoBrinquedoOng"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="15dp"
+                app:layout_constraintEnd_toStartOf="@+id/imgSelecaoBrinquedoOng2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imgSelecaoBrinquedoOng2"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <ImageView
+                android:id="@+id/imgSelecaoBrinquedoOng2"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <ImageView
+                android:id="@+id/imgSelecaoBrinquedoOng3"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/imgSelecaoBrinquedoOng2"
+                app:layout_constraintTop_toTopOf="@+id/imgSelecaoBrinquedoOng2"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/txtSelecaoBrinquedoOngCategoria"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="TextView"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/txtCategoria"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txtCategoria"
+                app:layout_constraintTop_toTopOf="@+id/txtCategoria" />
+
+            <TextView
+                android:id="@+id/txtSelecaoBrinquedoOngCondição"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="TextView"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/txtCondicao"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txtCondicao"
+                app:layout_constraintTop_toTopOf="@+id/txtCondicao" />
+
+            <TextView
+                android:id="@+id/txtSelecaoBrinquedoOngTipo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="TextView"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/txtTipo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txtTipo"
+                app:layout_constraintTop_toTopOf="@+id/txtTipo" />
+
+            <TextView
+                android:id="@+id/txtSelecaoBrinquedoOngQuantidade"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="TextView"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/txtQuantidade"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txtQuantidade"
+                app:layout_constraintTop_toTopOf="@+id/txtQuantidade" />
+
+            <TextView
+                android:id="@+id/txtSelecaoBrinquedoOngDoador"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="TextView"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/txtDoador"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txtDoador"
+                app:layout_constraintTop_toTopOf="@+id/txtDoador" />
+
+            <TextView
+                android:id="@+id/txtSelecaoBrinquedoOngEndereco"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
+                android:text="TextView"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/txtEndereço"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txtEndereço"
+                app:layout_constraintTop_toBottomOf="@+id/txtDoador" />
+
+            <TextView
+                android:id="@+id/txtSelecaoBrinquedoOngDescrição"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:text="TextView"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtDescricao" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</FrameLayout>
