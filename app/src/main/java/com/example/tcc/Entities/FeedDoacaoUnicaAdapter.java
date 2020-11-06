@@ -14,38 +14,39 @@ import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.squareup.picasso.Picasso;
 
-public class FeedOngAdapter extends FirestoreRecyclerAdapter<Doacao, FeedOngAdapter.ItensViewHolderOng> {
+public class FeedDoacaoUnicaAdapter extends FirestoreRecyclerAdapter<Doacao, FeedDoacaoUnicaAdapter.ItensViewHolderDoacao> {
 
-    private FeedOngAdapter.OnListItemClick onListItemClick;
+    private FeedDoacaoUnicaAdapter.OnListItemClick onListItemClick;
 
-    public FeedOngAdapter(@NonNull FirestoreRecyclerOptions<Doacao> options, FeedOngAdapter.OnListItemClick onListItemClick) {
+    public FeedDoacaoUnicaAdapter(@NonNull FirestoreRecyclerOptions<Doacao> options, FeedDoacaoUnicaAdapter.OnListItemClick onListItemClick) {
         super(options);
         this.onListItemClick = onListItemClick;
     }
 
-    @NonNull
     @Override
-    public ItensViewHolderOng onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.ong_customfeedlayout, parent, false);
-        return new FeedOngAdapter.ItensViewHolderOng(view);
-    }
-
-    @Override
-    protected void onBindViewHolder(@NonNull ItensViewHolderOng holder, int position, @NonNull Doacao model) {
+    protected void onBindViewHolder(@NonNull ItensViewHolderDoacao holder, int position, @NonNull Doacao model) {
         holder.tipo.setText(model.getTipo());
         holder.categoria.setText("Categoria: " + model.getCategoria());
         holder.quantidade.setText("Quantidade: " + model.getQtd());
         Picasso.get().load(model.getImgUrl1()).into(holder.imagem);
     }
 
-    public class ItensViewHolderOng extends RecyclerView.ViewHolder implements View.OnClickListener {
+    @NonNull
+    @Override
+    public ItensViewHolderDoacao onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.ong_customfeedlayout, parent, false);
+        return new FeedDoacaoUnicaAdapter.ItensViewHolderDoacao(view);
+    }
+
+
+    public class ItensViewHolderDoacao extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private ImageView imagem;
         private TextView tipo;
         private TextView categoria;
         private TextView quantidade;
 
-        public ItensViewHolderOng(@NonNull View itemView) {
+        public ItensViewHolderDoacao(@NonNull View itemView) {
             super(itemView);
 
             tipo = itemView.findViewById(R.id.txtTipo);
@@ -58,12 +59,12 @@ public class FeedOngAdapter extends FirestoreRecyclerAdapter<Doacao, FeedOngAdap
 
         @Override
         public void onClick(View view) {
-            onListItemClick.onItemClick(getItem(getAdapterPosition()), getAdapterPosition());
+            onListItemClick.onItemClickDoacao(getItem(getAdapterPosition()), getAdapterPosition());
         }
     }
 
     public interface OnListItemClick {
-        void onItemClick(Doacao snapshot, int position);
+        void onItemClickDoacao(Doacao snapshot, int position);
     }
 
 }

@@ -1,12 +1,12 @@
-package com.example.tcc.ong;
+package com.example.tcc.doador;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.tcc.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -18,27 +18,26 @@ import com.squareup.picasso.Picasso;
 
 import java.util.Map;
 
-public class OngSelecaoDoacaoUnicaMoveis extends AppCompatActivity {
+public class DoadorSelecaoDoacaoUnicaRoupa extends AppCompatActivity {
 
     String mUser;
-    String idItem;
+    String idItemDoacao;
     String mFoto2, mFoto3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ong_activity_selecao_doacao_unica_moveis);
+        setContentView(R.layout.doador_activity_selecao_doacao_unica_roupa);
 
-        idItem = OngFeedDoacaoFragment.id_Clicked_Moveis;
-        Log.i("chama", idItem);
+        idItemDoacao = DoadorDoacaoUnicaFragment.id_Clicked_roupa_doacao;
 
-        ColetaDadosMoveis();
+        ColetaDadosRoupaDoador();
 
     }
 
-    private void ColetaDadosMoveis() {
+    private void ColetaDadosRoupaDoador() {
 
-        DocumentReference docRef = FirebaseFirestore.getInstance().collection("Aguardando").document(idItem);
+        DocumentReference docRef = FirebaseFirestore.getInstance().collection("Aguardando").document(idItemDoacao);
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -50,7 +49,6 @@ public class OngSelecaoDoacaoUnicaMoveis extends AppCompatActivity {
                         Map<String, Object> x = document.getData();
 
                         String mCategoria = x.get("categoria").toString();
-                        String mCondicao = x.get("condicao").toString();
                         String mTipo = x.get("tipo").toString();
                         String mQtd = x.get("qtd").toString();
                         String mDescricao = x.get("descricao").toString();
@@ -67,26 +65,20 @@ public class OngSelecaoDoacaoUnicaMoveis extends AppCompatActivity {
                         if(x.get("imgUrl3") == null) {
                             mFoto3 = "00";
                         }
-                        mUser = x.get("id_user").toString();
+                        mUser = x.get("id_ong").toString();
 
-                        TextView categoria = (TextView) findViewById(R.id.txtSelecaoMoveisOngCategoria);
-                        TextView condicao = (TextView) findViewById(R.id.txtSelecaoMoveisOngCondição);
-                        TextView tipo = (TextView) findViewById(R.id.txtSelecaoMoveisOngTipo);
-                        TextView qtd = (TextView) findViewById(R.id.txtSelecaoMoveisOngQuantidade);
-                        TextView descricao = (TextView) findViewById(R.id.txtSelecaoMoveisOngDescrição);
-                        ImageView foto1 = (ImageView) findViewById(R.id.imgSelecaoMoveisOng);
-                        ImageView foto2 = (ImageView) findViewById(R.id.imgSelecaoMoveisOng2);
-                        ImageView foto3 = (ImageView) findViewById(R.id.imgSelecaoMoveisOng3);
+                        TextView categoria = (TextView) findViewById(R.id.txtSelecaoRoupaDoadorCategoria);
+                        TextView tipo = (TextView) findViewById(R.id.txtSelecaoRoupaDoadorTipo);
+                        TextView qtd = (TextView) findViewById(R.id.txtSelecaoRoupaDoadorQuantidade);
+                        TextView descricao = (TextView) findViewById(R.id.txtSelecaoRoupaDoadorDescrição);
+                        ImageView foto1 = (ImageView) findViewById(R.id.imgSelecaoRoupaDoador);
                         categoria.setText(mCategoria);
-                        condicao.setText(mCondicao);
                         tipo.setText(mTipo);
                         qtd.setText(mQtd);
                         descricao.setText(mDescricao);
                         Picasso.get().load(mFoto1).into(foto1);
-                        Picasso.get().load(mFoto2).into(foto2);
-                        Picasso.get().load(mFoto3).into(foto3);
 
-                        DocumentReference docRef2 = FirebaseFirestore.getInstance().collection("userDoador").document(mUser);
+                        DocumentReference docRef2 = FirebaseFirestore.getInstance().collection("userONG").document(mUser);
                         docRef2.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                             @Override
                             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -100,8 +92,8 @@ public class OngSelecaoDoacaoUnicaMoveis extends AppCompatActivity {
                                         String mNome = x.get("username").toString();
                                         String mEndereco = x.get("endereco").toString();
 
-                                        TextView username = (TextView) findViewById(R.id.txtSelecaoMoveisOngDoador);
-                                        TextView endereco = (TextView) findViewById(R.id.txtSelecaoMoveisOngEndereco);
+                                        TextView username = (TextView) findViewById(R.id.txtSelecaoRoupaDoadorDoador);
+                                        TextView endereco = (TextView) findViewById(R.id.txtSelecaoRoupaDoadorEndereco);
                                         username.setText(mNome);
                                         endereco.setText(mEndereco);
 
@@ -117,6 +109,5 @@ public class OngSelecaoDoacaoUnicaMoveis extends AppCompatActivity {
                 }
             }
         });
-
     }
 }

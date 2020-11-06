@@ -22,6 +22,7 @@ public class OngSelecaoDoacaoUnicaBrinquedo extends AppCompatActivity {
 
     String mUser;
     String idItem;
+    String mFoto2, mFoto3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +55,18 @@ public class OngSelecaoDoacaoUnicaBrinquedo extends AppCompatActivity {
                         String mQtd = x.get("qtd").toString();
                         String mDescricao = x.get("descricao").toString();
                         String mFoto1 = x.get("imgUrl1").toString();
-                        String mFoto2 = x.get("imgUrl2").toString();
-                        String mFoto3 = x.get("imgUrl3").toString();
+                        if(x.get("imgUrl2") != null) {
+                            mFoto2 = x.get("imgUrl2").toString();
+                        }
+                        if(x.get("imgUrl2") == null) {
+                            mFoto2 = "00";
+                        }
+                        if(x.get("imgUrl3") != null) {
+                            mFoto3 = x.get("imgUrl3").toString();
+                        }
+                        if(x.get("imgUrl3") == null) {
+                            mFoto3 = "00";
+                        }
                         mUser = x.get("id_user").toString();
 
                         TextView categoria = (TextView) findViewById(R.id.txtSelecaoBrinquedoOngCategoria);

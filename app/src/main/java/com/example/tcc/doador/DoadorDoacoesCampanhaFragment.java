@@ -1,6 +1,8 @@
 package com.example.tcc.doador;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,20 +18,22 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tcc.Entities.Doacao;
+import com.example.tcc.Entities.FeedCampanhaAdapter;
 import com.example.tcc.Entities.SolicitarCampanha;
 import com.example.tcc.R;
+import com.example.tcc.ong.OngSelecaoDoacaoUnicaRoupa;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.squareup.picasso.Picasso;
 
-
-public class DoadorDoacoesCampanhaFragment extends Fragment {
+public class DoadorDoacoesCampanhaFragment extends Fragment implements FeedCampanhaAdapter.OnListItemClick{
 
     private RecyclerView feedCampanha;
     private FirebaseFirestore mFirebaseFirestore;
     private FirestoreRecyclerAdapter adapter;
+    public static String id_Clicked_campanha;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,43 +55,14 @@ public class DoadorDoacoesCampanhaFragment extends Fragment {
                 .setQuery(query, SolicitarCampanha.class)
                 .build();
 
-        adapter = new FirestoreRecyclerAdapter<SolicitarCampanha, ItensViewHolderCampanha>(options) {
-
-            @NonNull
-            @Override
-            public ItensViewHolderCampanha onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.doador_customfeedlayout, parent, false);
-                return new DoadorDoacoesCampanhaFragment.ItensViewHolderCampanha(view);
-            }
-
-            @Override
-            protected void onBindViewHolder(@NonNull ItensViewHolderCampanha holder, int position, @NonNull SolicitarCampanha model) {
-                holder.titulox.setText(model.getTitulo());
-                holder.categoriax.setText("Categoria: " + model.getCategoria());
-                holder.breve_descx.setText(model.getDescricao_breve());
-                Picasso.get().load(model.getImgUrl1_campanha()).into(holder.imagemx);
-            }
-        };
+        adapter = new FeedCampanhaAdapter(options, this);
 
         feedCampanha.setHasFixedSize(true);
         feedCampanha.setLayoutManager(new LinearLayoutManager(view.getContext()));
         feedCampanha.setAdapter(adapter);
     }
 
-    private class ItensViewHolderCampanha extends RecyclerView.ViewHolder {
-        private ImageView imagemx;
-        private TextView titulox;
-        private TextView categoriax;
-        private TextView breve_descx;
 
-        public ItensViewHolderCampanha(@NonNull View itemView) {
-            super(itemView);
-            titulox = itemView.findViewById(R.id.txtTipoDoacao);
-            categoriax = itemView.findViewById(R.id.txtCategoriaDoacao);
-            breve_descx = itemView.findViewById(R.id.txtQuantidadeDoacao);
-            imagemx = itemView.findViewById(R.id.imgDoacao);
-        }
-    }
     @Override
     public void onStop() {
         super.onStop();
@@ -97,6 +72,16 @@ public class DoadorDoacoesCampanhaFragment extends Fragment {
     public void onStart() {
         super.onStart();
         adapter.startListening();
+    }
+
+    @Override
+    public void onItemClickCampanha(SolicitarCampanha snapshot, int position) {
+
+            Log.i("Item_Clicked", snapshot.getCategoria());
+            id_Clicked_campanha = snapshot.getId_campanha();
+            Intent i = new Intent(getContext(), DoadorSelecaoCampanha.class);
+            startActivity(i);
+
     }
 }
 

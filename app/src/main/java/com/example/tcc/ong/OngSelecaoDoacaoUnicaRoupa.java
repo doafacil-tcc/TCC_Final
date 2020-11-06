@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.tcc.R;
+import com.example.tcc.doador.DoadorDoacaoUnicaFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
@@ -17,11 +18,13 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.squareup.picasso.Picasso;
 
 import java.util.Map;
+import java.util.Objects;
 
 public class OngSelecaoDoacaoUnicaRoupa extends AppCompatActivity {
 
     String mUser;
     String idItem;
+    String mFoto2, mFoto3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +32,6 @@ public class OngSelecaoDoacaoUnicaRoupa extends AppCompatActivity {
         setContentView(R.layout.ong_activity_selecao_doacao_unica_roupa);
 
         idItem = OngFeedDoacaoFragment.id_Clicked_roupa;
-        Log.i("chama", idItem);
 
         ColetaDadosRoupa();
 
@@ -55,8 +57,18 @@ public class OngSelecaoDoacaoUnicaRoupa extends AppCompatActivity {
                         String mTamanho = x.get("tamanho").toString();
                         String mDescricao = x.get("descricao").toString();
                         String mFoto1 = x.get("imgUrl1").toString();
-                        String mFoto2 = x.get("imgUrl2").toString();
-                        String mFoto3 = x.get("imgUrl3").toString();
+                        if(x.get("imgUrl2") != null) {
+                            mFoto2 = x.get("imgUrl2").toString();
+                        }
+                        if(x.get("imgUrl2") == null) {
+                            mFoto2 = "00";
+                        }
+                        if(x.get("imgUrl3") != null) {
+                            mFoto3 = x.get("imgUrl3").toString();
+                        }
+                        if(x.get("imgUrl3") == null) {
+                            mFoto3 = "00";
+                        }
                         mUser = x.get("id_user").toString();
 
                         TextView categoria = (TextView) findViewById(R.id.txtSelecaoRoupaOngCategoria);
