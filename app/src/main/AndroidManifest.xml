@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".doador.DoadorSelecaoCampanha"></activity>
+        <activity android:name=".doador.DoadorSelecaoDoacaoUnicaLivros"></activity>
+        <activity android:name=".doador.DoadorSelecaoDoacaoUnicaMoveis" />
+        <activity android:name=".doador.DoadorSelecaoDoacaoUnicaBrinquedo" />
+        <activity android:name=".doador.DoadorSelecaoCampanha" />
         <activity android:name=".doador.DoadorSelecaoDoacaoUnicaRoupa" />
         <activity android:name=".ong.OngSelecaoDoacaoUnicaRoupa" />
         <activity android:name=".ong.OngSolicitarCampanha" />

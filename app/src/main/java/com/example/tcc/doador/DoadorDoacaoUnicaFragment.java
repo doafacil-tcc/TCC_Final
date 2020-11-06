@@ -92,24 +92,24 @@ public class DoadorDoacaoUnicaFragment extends Fragment implements FeedDoacaoUni
 
             Log.i("Item_Clicked", snapshot.getCategoria());
             id_Clicked_Brinquedo_doacao = snapshot.getId();
-//            Intent i = new Intent(getContext(), .class);
-//            startActivity(i);
+            Intent i = new Intent(getContext(), DoadorSelecaoDoacaoUnicaBrinquedo.class);
+            startActivity(i);
         }
 
         if(snapshot.getCategoria().equals("Móveis")) {
 
             Log.i("Item_Clicked", snapshot.getCategoria());
             id_Clicked_Moveis_doacao = snapshot.getId();
-//            Intent i = new Intent(getContext(), .class);
-//            startActivity(i);
+            Intent i = new Intent(getContext(), DoadorSelecaoDoacaoUnicaMoveis.class);
+            startActivity(i);
         }
 
         if(snapshot.getCategoria().equals("Livros")) {
 
             Log.i("Item_Clicked", snapshot.getCategoria());
             id_Clicked_Livros_doacao = snapshot.getId();
-//            Intent i = new Intent(getContext(), .class);
-//            startActivity(i);
+            Intent i = new Intent(getContext(), DoadorSelecaoDoacaoUnicaLivros.class);
+            startActivity(i);
         }
     }
 }
