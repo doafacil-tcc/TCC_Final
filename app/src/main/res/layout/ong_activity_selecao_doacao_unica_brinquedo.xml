@@ -104,16 +104,15 @@
 
             <Button
                 android:id="@+id/btnAceitarDoacaoBrinquedo"
-                android:layout_width="250dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
                 android:layout_marginTop="40dp"
                 android:layout_marginBottom="40dp"
                 android:background="@color/Laranja_Escuro"
                 android:text="Aceitar Doação"
                 android:textColor="#FFFFFF"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtSelecaoBrinquedoOngEndereco" />
 
@@ -241,6 +240,21 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtDescricao" />
+
+            <Button
+                android:id="@+id/btnChamarChatOngBrinquedo"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:background="@color/Laranja_Normal"
+                android:drawableLeft="@drawable/ic_baseline_chat_24"
+                android:drawableTint="@color/Creme"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Chat"
+                android:textColor="@color/Branco"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/btnAceitarDoacaoBrinquedo" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

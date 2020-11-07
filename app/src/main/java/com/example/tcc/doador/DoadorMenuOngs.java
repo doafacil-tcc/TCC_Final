@@ -1,75 +1,67 @@
 package com.example.tcc.doador;
 
 import android.os.Bundle;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.tcc.Entities.Doacao;
+import com.example.tcc.Entities.FeedDoacaoUnicaAdapter;
+import com.example.tcc.Entities.FeedMenuOngsAdapter;
+import com.example.tcc.Entities.User;
 import com.example.tcc.R;
+import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 
-public class DoadorMenuOngs extends AppCompatActivity {
+public class DoadorMenuOngs extends AppCompatActivity implements FeedMenuOngsAdapter.OnListItemClick{
 
-    ListView mListView;
-
-    int [] images = {R.drawable.ic_baseline_home_24,
-                     R.drawable.ic_baseline_chat_24,
-                     R.drawable.ic_baseline_info_24,
-                     R.drawable.ic_baseline_history_24,
-                     R.drawable.ic_launcher_foreground};
-
-    String [] Names = {"ONG1", "ONG2", "ONG3", "ONG4", "ONG5"};
+    private RecyclerView feedMenuOngs;
+    private FirebaseFirestore mFirebaseFirestore;
+    private FirestoreRecyclerAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.doador_activity_menu_ongs);
 
-        mListView = (ListView) findViewById(R.id.feedMenuOngs);
+        mFirebaseFirestore = FirebaseFirestore.getInstance();
+        feedMenuOngs = findViewById(R.id.menuFeedOngs);
 
-        CustomAdaptor customAdaptor = new CustomAdaptor();
-        mListView.setAdapter(customAdaptor);
+        feedMenuOngs.addItemDecoration(new DividerItemDecoration(feedMenuOngs.getContext(), DividerItemDecoration.VERTICAL));
+
+        Query query = mFirebaseFirestore.collection("userONG");
+
+        FirestoreRecyclerOptions<User> options = new FirestoreRecyclerOptions.Builder<User>()
+                .setQuery(query, User.class)
+                .build();
+
+        adapter = new FeedMenuOngsAdapter(options,this);
+
+        feedMenuOngs.setHasFixedSize(true);
+        feedMenuOngs.setLayoutManager(new LinearLayoutManager(this));
+        feedMenuOngs.setAdapter(adapter);
+
     }
 
-    class CustomAdaptor extends BaseAdapter{
+    @Override
+    public void onStop() {
+        super.onStop();
+        adapter.stopListening();
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        adapter.startListening();
+    }
 
-
-        @Override
-        public int getCount() {
-
-            return images.length;
-        }
-
-        @Override
-        public Object getItem(int position) {
-
-            return null;
-        }
-
-        @Override
-        public long getItemId(int position) {
-
-            return 0;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-
-            View view = getLayoutInflater().inflate(R.layout.doador_custommenuongslayout, null);
-
-            ImageView mImageView = (ImageView) view.findViewById(R.id.imgAvataMeusDadosDoador);
-            TextView mTextView = (TextView) view.findViewById(R.id.textView);
-
-            mImageView.setImageResource(images[position]);
-
-            mTextView.setText(Names[position]);
-
-            return view;
-        }
+    @Override
+    public void onItemClick(User snapshot, int position) {
+        Log.i("Menu_ONG", "Item Clicked");
     }
 }
 

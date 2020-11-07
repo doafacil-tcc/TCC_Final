@@ -18,10 +18,10 @@ public class User implements Parcelable {
     private String CNPJ;
     private String site;
 
-    public User(){
-    }
+    public User(){ }
 
-    public User(String uuid, String username, String profileUrl, String CPF, String CEP, String email, String telefone, String CNPJ, String endereco, String site) {
+    public User(String uuid, String username, String profileUrl, String CPF, String CEP,
+                String email, String telefone, String CNPJ, String endereco, String site) {
         this.uuid = uuid;
         this.username = username;
         this.profileUrl = profileUrl;
@@ -60,36 +60,52 @@ public class User implements Parcelable {
     };
 
 
-    public String getCNPJ() {
-        return CNPJ;
+    public String getUuid() {
+        return uuid;
     }
 
-    public void setCNPJ(String CNPJ) {
-        this.CNPJ = CNPJ;
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
-    public String getSite() {
-        return site;
+    public String getUsername() {
+        return username;
     }
 
-    public void setSite(String site) {
-        this.site = site;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getCpf() {
+    public String getProfileUrl() {
+        return profileUrl;
+    }
+
+    public void setProfileUrl(String profileUrl) {
+        this.profileUrl = profileUrl;
+    }
+
+    public String getCPF() {
         return CPF;
     }
 
-    public void setCpf(String CPF) {
+    public void setCPF(String CPF) {
         this.CPF = CPF;
     }
 
-    public String getCep() {
+    public String getCEP() {
         return CEP;
     }
 
-    public void setCep(String CEP) {
+    public void setCEP(String CEP) {
         this.CEP = CEP;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 
     public String getEmail() {
@@ -108,24 +124,24 @@ public class User implements Parcelable {
         this.telefone = telefone;
     }
 
-    public String getUuid(){
-        return uuid;
+    public String getCNPJ() {
+        return CNPJ;
     }
 
-    public String getUsername(){
-        return username;
+    public void setCNPJ(String CNPJ) {
+        this.CNPJ = CNPJ;
     }
 
-    public String getProfileUrl(){
-        return profileUrl;
+    public String getSite() {
+        return site;
     }
 
-    public String getEndereco() {
-        return endereco;
+    public void setSite(String site) {
+        this.site = site;
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public static Creator<User> getCREATOR() {
+        return CREATOR;
     }
 
     @Override

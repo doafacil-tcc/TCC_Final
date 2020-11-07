@@ -14,6 +14,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -48,6 +49,8 @@ public class DoadorDoacoesCampanhaFragment extends Fragment implements FeedCampa
 
         mFirebaseFirestore = FirebaseFirestore.getInstance();
         feedCampanha = view.findViewById(R.id.feedCampanhas);
+
+        feedCampanha.addItemDecoration(new DividerItemDecoration(feedCampanha.getContext(), DividerItemDecoration.VERTICAL));
 
         Query query = mFirebaseFirestore.collection("Campanha");
 

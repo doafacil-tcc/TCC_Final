@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -51,6 +52,8 @@ public class DoadorDoacaoUnicaFragment extends Fragment implements FeedDoacaoUni
 
         mFirebaseFirestore = FirebaseFirestore.getInstance();
         feedDoacoesDoarUnica = view.findViewById(R.id.feedDoarUnica);
+
+        feedDoacoesDoarUnica.addItemDecoration(new DividerItemDecoration(feedDoacoesDoarUnica.getContext(), DividerItemDecoration.VERTICAL));
 
         Query query = mFirebaseFirestore.collection("Aguardando").whereEqualTo("origem", "ONG");
 

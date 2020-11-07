@@ -12,6 +12,7 @@ import com.example.tcc.Entities.FeedOngAdapter;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -46,6 +47,8 @@ public class OngFeedDoacaoFragment extends Fragment implements FeedOngAdapter.On
 
         mFirebaseFirestore = FirebaseFirestore.getInstance();
         feedDoacoesOng = view.findViewById(R.id.feedOng);
+
+        feedDoacoesOng.addItemDecoration(new DividerItemDecoration(feedDoacoesOng.getContext(), DividerItemDecoration.VERTICAL));
 
         Query query = mFirebaseFirestore.collection("Aguardando").whereEqualTo("origem", "Doador");
 
