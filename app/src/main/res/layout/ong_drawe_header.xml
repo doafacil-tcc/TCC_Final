@@ -7,7 +7,7 @@
     android:background="@color/Laranja_Normal">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/nome_last_one"
         android:layout_width="153dp"
         android:layout_height="43dp"
         android:text="Doa Fácil"
