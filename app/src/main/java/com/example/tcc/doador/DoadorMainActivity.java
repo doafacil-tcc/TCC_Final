@@ -77,6 +77,12 @@ public class DoadorMainActivity extends AppCompatActivity implements NavigationV
             Intent i = new Intent(com.example.tcc.doador.DoadorMainActivity.this, com.example.tcc.doador.DoadorMeusDados.class);
             startActivity(i);
         }
+
+        if(item.getItemId() == R.id.mensagens) {
+            Intent i = new Intent(com.example.tcc.doador.DoadorMainActivity.this, DoadorChat.class);
+            startActivity(i);
+        }
+
         return true;
     }
 }

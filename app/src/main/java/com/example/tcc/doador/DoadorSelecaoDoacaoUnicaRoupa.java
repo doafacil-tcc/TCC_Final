@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.tcc.Entities.User;
 import com.example.tcc.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -23,6 +26,7 @@ public class DoadorSelecaoDoacaoUnicaRoupa extends AppCompatActivity {
     String mUser;
     String idItemDoacao;
     String mFoto2, mFoto3;
+    Button btnChat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +35,20 @@ public class DoadorSelecaoDoacaoUnicaRoupa extends AppCompatActivity {
 
         idItemDoacao = DoadorDoacaoUnicaFragment.id_Clicked_roupa_doacao;
 
+        btnChat = findViewById(R.id.btnChamarChatUnicaRoupa);
+        btnChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                IniciarChat();
+            }
+        });
+
+
         ColetaDadosRoupaDoador();
 
+    }
+
+    private void IniciarChat() {
     }
 
     private void ColetaDadosRoupaDoador() {
