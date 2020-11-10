@@ -15,6 +15,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
+import com.example.tcc.Entities.MensagensActivity;
 import com.example.tcc.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
@@ -79,7 +80,7 @@ public class DoadorMainActivity extends AppCompatActivity implements NavigationV
         }
 
         if(item.getItemId() == R.id.mensagens) {
-            Intent i = new Intent(com.example.tcc.doador.DoadorMainActivity.this, DoadorMensagens.class);
+            Intent i = new Intent(com.example.tcc.doador.DoadorMainActivity.this, MensagensActivity.class);
             startActivity(i);
         }
 

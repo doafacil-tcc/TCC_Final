@@ -1,4 +1,4 @@
-package com.example.tcc.doador;
+package com.example.tcc.Entities;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -39,7 +39,7 @@ import com.xwray.groupie.Item;
 import java.util.List;
 import java.util.Map;
 
-public class DoadorChat extends AppCompatActivity {
+public class ChatActivity extends AppCompatActivity {
 
     private String mAvatar, mIdOutro, mNomeOutro;
     private EditText editText;

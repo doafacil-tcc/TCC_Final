@@ -9,10 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ong.OngChat"></activity>
-        <activity android:name=".doador.DoadorChat" />
+        <activity android:name=".ong.OngChat"/>
+        <activity android:name=".Entities.ChatActivity"
+            android:label="Mensagens"
+            android:parentActivityName=".doador.DoadorMainActivity"/>
         <activity android:name=".ong.OngMensagens" />
-        <activity android:name=".doador.DoadorMensagens" />
+        <activity android:name=".Entities.MensagensActivity" />
         <activity android:name=".doador.DoadorSelecaoDoacaoUnicaLivros" />
         <activity android:name=".doador.DoadorSelecaoDoacaoUnicaMoveis" />
         <activity android:name=".doador.DoadorSelecaoDoacaoUnicaBrinquedo" />

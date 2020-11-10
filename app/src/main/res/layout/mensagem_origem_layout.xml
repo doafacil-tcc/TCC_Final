@@ -12,32 +12,25 @@
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
         android:src="@color/Cinza"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/txt_message"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:background="@color/Branco"
         android:maxWidth="260dp"
+        android:padding="8dp"
         android:text="Text View Text View Text View Text View Text View Text View Text View Text View Text View Text View Text View Text View Text View Text View "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/img_message_user_origem"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/img_message_user_origem" />
-
-    <TextView
-        android:id="@+id/Name_Chat_Destino"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="270dp"
-        tools:layout_editor_absoluteY="35dp"
-        android:textColor="#00FFEFD5"/>
+        app:layout_constraintTop_toTopOf="@+id/img_message_user_origem"
+        tools:maxWidth="200dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

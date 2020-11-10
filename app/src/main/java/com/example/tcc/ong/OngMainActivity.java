@@ -13,8 +13,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.tcc.R;
-import com.example.tcc.doador.DoadorChat;
-import com.example.tcc.doador.DoadorMensagens;
+import com.example.tcc.Entities.MensagensActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -74,7 +73,7 @@ public class OngMainActivity extends AppCompatActivity implements NavigationView
         }
         if (item.getItemId() == R.id.mensagens){
 
-            Intent i = new Intent(com.example.tcc.ong.OngMainActivity.this, DoadorMensagens.class);
+            Intent i = new Intent(com.example.tcc.ong.OngMainActivity.this, MensagensActivity.class);
 //            i.putExtra("id_outro", "SJ972B8IlKOPIUzTei2ANI0xxsu2");
 //            i.putExtra("nome_ong", "Teste Doador");
 //            i.putExtra("foto_avatar", "https://firebasestorage.googleapis.com/v0/b/tcc-doafacil.appspot.com/o/AvatarDoador%2F5907028e-85dc-464e-bc90-e4b97fba7425?alt=media&token=f2cf055d-7407-4306-9623-27c82d646cf9");

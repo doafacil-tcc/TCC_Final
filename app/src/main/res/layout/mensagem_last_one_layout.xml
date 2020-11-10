@@ -9,8 +9,8 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/img_last_Msg"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
@@ -26,11 +26,12 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:text="TextView"
-        android:textSize="16sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/img_last_Msg"
-        app:layout_constraintTop_toTopOf="@+id/img_last_Msg" />
+        app:layout_constraintTop_toTopOf="@+id/img_last_Msg"
+        android:textColor="@color/Verde"/>
 
     <TextView
         android:id="@+id/msg_last_one"
@@ -41,5 +42,6 @@
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="@+id/nome_last_one"
         app:layout_constraintStart_toEndOf="@+id/img_last_Msg"
-        app:layout_constraintTop_toBottomOf="@+id/nome_last_one" />
+        app:layout_constraintTop_toBottomOf="@+id/nome_last_one"
+        android:textColor="@color/Verde"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.tcc.Entities.ChatActivity;
 import com.example.tcc.Entities.User;
 import com.example.tcc.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -20,7 +21,6 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.squareup.picasso.Picasso;
 
-import java.net.UnknownServiceException;
 import java.util.Map;
 
 public class DoadorSelecaoDoacaoUnicaRoupa extends AppCompatActivity {
@@ -74,7 +74,7 @@ public class DoadorSelecaoDoacaoUnicaRoupa extends AppCompatActivity {
 
                         User u = new User(id,nome,avatar,null,cep,email,tel,cnpj,endereco,site);
 
-                        Intent i = new Intent(DoadorSelecaoDoacaoUnicaRoupa.this, DoadorChat.class);
+                        Intent i = new Intent(DoadorSelecaoDoacaoUnicaRoupa.this, ChatActivity.class);
                         i.putExtra("id_outro", u.getUuid());
                         i.putExtra("nome_outro", u.getUsername());
                         i.putExtra("foto_outro", u.getProfileUrl());

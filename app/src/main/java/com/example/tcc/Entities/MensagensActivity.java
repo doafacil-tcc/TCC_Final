@@ -1,24 +1,19 @@
-package com.example.tcc.doador;
+package com.example.tcc.Entities;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.tcc.Entities.ClickContato;
-import com.example.tcc.Entities.Contact;
-import com.example.tcc.Entities.Doacao;
-import com.example.tcc.Entities.FeedOngAdapter;
-import com.example.tcc.Entities.User;
 import com.example.tcc.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentChange;
@@ -34,7 +29,7 @@ import com.xwray.groupie.OnItemClickListener;
 
 import java.util.List;
 
-public class DoadorMensagens extends AppCompatActivity {
+public class MensagensActivity extends AppCompatActivity {
 
     GroupAdapter adapter;
 
@@ -44,10 +39,13 @@ public class DoadorMensagens extends AppCompatActivity {
         setContentView(R.layout.doador_activity_mensagens);
 
         Toolbar toolbar = findViewById(R.id.toolbar_mensagens_Doador);
+
         toolbar.setTitle("Mensagens");
 
         final RecyclerView rv = findViewById(R.id.recycler_contact);
         rv.setLayoutManager(new LinearLayoutManager(this));
+
+        rv.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
         adapter = new GroupAdapter();
         rv.setAdapter(adapter);
@@ -107,7 +105,7 @@ public class DoadorMensagens extends AppCompatActivity {
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent i = new Intent(DoadorMensagens.this, DoadorChat.class);
+                    Intent i = new Intent(MensagensActivity.this, ChatActivity.class);
                     i.putExtra("id_outro", contact.getUuid());
                     i.putExtra("nome_outro", contact.getUsername());
                     i.putExtra("foto_outro", contact.getPhotoUrl());
