@@ -163,4 +163,18 @@ public class User implements Parcelable {
         dest.writeString(site);
 
     }
+
+    public void readFromParcel(Parcel source) {
+        uuid = source.readString();
+        username = source.readString();
+        profileUrl = source.readString();
+        email = source.readString();
+        CEP = source.readString();
+        CPF = source.readString();
+        telefone = source.readString();
+        endereco = source.readString();
+        CNPJ = source.readString();
+        site = source.readString();
+
+    }
 }

@@ -3,6 +3,7 @@ package com.example.tcc.doador;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,11 +20,12 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.squareup.picasso.Picasso;
 
+import java.net.UnknownServiceException;
 import java.util.Map;
 
 public class DoadorSelecaoDoacaoUnicaRoupa extends AppCompatActivity {
 
-    String mUser;
+    String mUserOng;
     String idItemDoacao;
     String mFoto2, mFoto3;
     Button btnChat;
@@ -43,12 +45,46 @@ public class DoadorSelecaoDoacaoUnicaRoupa extends AppCompatActivity {
             }
         });
 
-
         ColetaDadosRoupaDoador();
 
     }
 
     private void IniciarChat() {
+
+        DocumentReference docRef2 = FirebaseFirestore.getInstance().collection("userONG").document(mUserOng);
+        docRef2.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        Log.i("TAG2", "DocumentSnapshot data: " + document.getData());
+
+                        Map<String, Object> x = document.getData();
+
+                        String nome = x.get("username").toString();
+                        String id = x.get("uuid").toString();
+                        String tel = x.get("telefone").toString();
+                        String site = x.get("site").toString();
+                        String avatar = x.get("profileUrl").toString();
+                        String endereco = x.get("endereco").toString();
+                        String email = x.get("email").toString();
+                        String cnpj = x.get("cnpj").toString();
+                        String cep = x.get("cep").toString();
+
+                        User u = new User(id,nome,avatar,null,cep,email,tel,cnpj,endereco,site);
+
+                        Intent i = new Intent(DoadorSelecaoDoacaoUnicaRoupa.this, DoadorChat.class);
+                        i.putExtra("id_outro", u.getUuid());
+                        i.putExtra("nome_outro", u.getUsername());
+                        i.putExtra("foto_outro", u.getProfileUrl());
+                        startActivity(i);
+
+                    }
+
+                }
+            }
+        });
     }
 
     private void ColetaDadosRoupaDoador() {
@@ -81,7 +117,7 @@ public class DoadorSelecaoDoacaoUnicaRoupa extends AppCompatActivity {
                         if(x.get("imgUrl3") == null) {
                             mFoto3 = "00";
                         }
-                        mUser = x.get("id_ong").toString();
+                        mUserOng = x.get("id_ong").toString();
 
                         TextView categoria = (TextView) findViewById(R.id.txtSelecaoRoupaDoadorCategoria);
                         TextView tipo = (TextView) findViewById(R.id.txtSelecaoRoupaDoadorTipo);
@@ -94,7 +130,7 @@ public class DoadorSelecaoDoacaoUnicaRoupa extends AppCompatActivity {
                         descricao.setText(mDescricao);
                         Picasso.get().load(mFoto1).into(foto1);
 
-                        DocumentReference docRef2 = FirebaseFirestore.getInstance().collection("userONG").document(mUser);
+                        DocumentReference docRef2 = FirebaseFirestore.getInstance().collection("userONG").document(mUserOng);
                         docRef2.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                             @Override
                             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
