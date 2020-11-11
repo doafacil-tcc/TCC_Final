@@ -9,6 +9,8 @@
     <string name="title_activity_pessoa_doador">PessoaDoadorActivity</string>
     <string name="open">open</string>
     <string name="close">close</string>
+    <string name="Chat">Chat</string>
+    <string name="Mensagens">Mensagens</string>
 
     <string-array name="spnTipoRoupaDoacao">
         <item>Escolha...</item>
