@@ -1,6 +1,9 @@
 package com.example.tcc.Entities;
 
-public class DoacaoComMatch {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class DoacaoComMatch implements Parcelable {
 
     String id;
     String id_user;
@@ -22,12 +25,9 @@ public class DoacaoComMatch {
     String endereco;
     String tipoEntrega;
 
-    public DoacaoComMatch(){ }
 
-    public DoacaoComMatch(String id, String id_user, String id_ong, String tipo, String qtd, String tamanho,
-                          String condicao, String descricao, String imgUrl1, String imgUrl2, String imgUrl3,
-                          String status, String unica_ou_campanha, String categoria, String origem, String data,
-                          String hora, String endereco, String tipoEntrega) {
+
+    public DoacaoComMatch(String id, String id_user, String id_ong, String tipo, String qtd, String tamanho, String condicao, String descricao, String imgUrl1, String imgUrl2, String imgUrl3, String status, String unica_ou_campanha, String categoria, String origem, String data, String hora, String endereco, String tipoEntrega) {
         this.id = id;
         this.id_user = id_user;
         this.id_ong = id_ong;
@@ -48,6 +48,68 @@ public class DoacaoComMatch {
         this.endereco = endereco;
         this.tipoEntrega = tipoEntrega;
     }
+
+    protected DoacaoComMatch(Parcel in) {
+        id = in.readString();
+        id_user = in.readString();
+        id_ong = in.readString();
+        tipo = in.readString();
+        qtd = in.readString();
+        tamanho = in.readString();
+        condicao = in.readString();
+        descricao = in.readString();
+        imgUrl1 = in.readString();
+        imgUrl2 = in.readString();
+        imgUrl3 = in.readString();
+        status = in.readString();
+        unica_ou_campanha = in.readString();
+        categoria = in.readString();
+        origem = in.readString();
+        data = in.readString();
+        hora = in.readString();
+        endereco = in.readString();
+        tipoEntrega = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(id);
+        dest.writeString(id_user);
+        dest.writeString(id_ong);
+        dest.writeString(tipo);
+        dest.writeString(qtd);
+        dest.writeString(tamanho);
+        dest.writeString(condicao);
+        dest.writeString(descricao);
+        dest.writeString(imgUrl1);
+        dest.writeString(imgUrl2);
+        dest.writeString(imgUrl3);
+        dest.writeString(status);
+        dest.writeString(unica_ou_campanha);
+        dest.writeString(categoria);
+        dest.writeString(origem);
+        dest.writeString(data);
+        dest.writeString(hora);
+        dest.writeString(endereco);
+        dest.writeString(tipoEntrega);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<DoacaoComMatch> CREATOR = new Creator<DoacaoComMatch>() {
+        @Override
+        public DoacaoComMatch createFromParcel(Parcel in) {
+            return new DoacaoComMatch(in);
+        }
+
+        @Override
+        public DoacaoComMatch[] newArray(int size) {
+            return new DoacaoComMatch[size];
+        }
+    };
 
     public String getId() {
         return id;

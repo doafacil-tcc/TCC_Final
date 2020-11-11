@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -16,9 +17,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tcc.Entities.ChatActivity;
+import com.example.tcc.Entities.DoacaoComMatch;
 import com.example.tcc.R;
+import com.example.tcc.inicio.CadastroOngActivity;
+import com.example.tcc.ong.OngMainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -33,6 +40,10 @@ public class DoadorClickDoar extends AppCompatActivity {
     private EditText data_pessoalmente, data_motorista, hora_hotorista;
     private Button btnEnviar;
     private String idDoacao, idOng, nomeOng, fotoOng, mFoto2, mFoto3;
+    String mData;
+    String mHora;
+    String mEndereco;
+    String mTipoEntrega;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +81,7 @@ public class DoadorClickDoar extends AppCompatActivity {
                 }
 
                 if (rbt2.isChecked()  && !data_motorista.getText().toString().isEmpty() && !hora_hotorista.getText().toString().isEmpty()){
+                    alterarDB();
                         Toast.makeText(getApplicationContext(), "Doação Registrada com Sucesso!", Toast.LENGTH_SHORT).show();
                         Intent i = new Intent(DoadorClickDoar.this, DoadorMainActivity.class);
                         startActivity(i);
@@ -79,6 +91,7 @@ public class DoadorClickDoar extends AppCompatActivity {
                 }
 
                 if (rbt3.isChecked()){
+                    alterarDB();
                     Intent i = new Intent(DoadorClickDoar.this, ChatActivity.class);
                     i.putExtra("id_outro", idOng);
                     i.putExtra("nome_outro", nomeOng);
@@ -125,11 +138,11 @@ public class DoadorClickDoar extends AppCompatActivity {
 
                         Map<String, Object> x = document.getData();
 
-                        String mCategoria = x.get("categoria").toString();
-                        String mTipo = x.get("tipo").toString();
-                        String mQtd = x.get("qtd").toString();
-                        String mDescricao = x.get("descricao").toString();
-                        String mFoto1 = x.get("imgUrl1").toString();
+                        final String mCategoria = x.get("categoria").toString();
+                        final String mTipo = x.get("tipo").toString();
+                        final String mQtd = x.get("qtd").toString();
+                        final String mDescricao = x.get("descricao").toString();
+                        final String mFoto1 = x.get("imgUrl1").toString();
                         if(x.get("imgUrl2") != null) {
                             mFoto2 = x.get("imgUrl2").toString();
                         }
@@ -142,40 +155,93 @@ public class DoadorClickDoar extends AppCompatActivity {
                         if(x.get("imgUrl3") == null) {
                             mFoto3 = "00";
                         }
-                        String mUserOng = x.get("id_ong").toString();
-                        String mCondicao = x.get("condicao").toString();
-                        String mOrigem = x.get("origem").toString();
-                        String mStatus = x.get("status").toString();
-                        String mTamanho = x.get("tamanho").toString();
-                        String mUnic_ouCamp = x.get("unica_ou_campanha").toString();
+                        final String mUserOng = x.get("id_ong").toString();
+                        final String mOrigem = x.get("origem").toString();
+                        final String mStatus = "Em_Transito";
+                        final String mUnic_ouCamp = x.get("unica_ou_campanha").toString();
 
+                        if (rbt1.isChecked()){
+                            mData = data_pessoalmente.getText().toString();
+                            mHora = "Horario Comercial";
+                            mTipoEntrega = "Pessoalmente";
+                            DocumentReference docRef2 = FirebaseFirestore.getInstance().collection("userONG").document(mUserOng);
+                            docRef2.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                    if (task.isSuccessful()) {
+                                        DocumentSnapshot document = task.getResult();
+                                        if (document.exists()) {
 
+                                            Map<String, Object> x = document.getData();
 
-                        DocumentReference docRef2 = FirebaseFirestore.getInstance().collection("userONG").document(mUserOng);
-                        docRef2.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                            @Override
-                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                if (task.isSuccessful()) {
-                                    DocumentSnapshot document = task.getResult();
-                                    if (document.exists()) {
-                                        Log.i("TAG2", "DocumentSnapshot data: " + document.getData());
-
-                                        Map<String, Object> x = document.getData();
-
-                                        String mNome = x.get("username").toString();
-                                        String mEndereco = x.get("endereco").toString();
-
-                                        TextView username = (TextView) findViewById(R.id.txtSelecaoRoupaDoadorDoador);
-                                        TextView endereco = (TextView) findViewById(R.id.txtSelecaoRoupaDoadorEndereco);
-                                        username.setText(mNome);
-                                        endereco.setText(mEndereco);
-
+                                            mEndereco = x.get("endereco").toString();
+                                        }
                                     }
-
                                 }
-                            }
-                        });
+                            });
+                            Log.i("yyyy", mEndereco);
+                        }
+                        if (rbt2.isChecked()){
+                            mData = data_motorista.getText().toString();
+                            mHora = hora_hotorista.getText().toString();
+                            mTipoEntrega = "Retirado";
+                            DocumentReference docRef3 = FirebaseFirestore.getInstance().collection("userDoador").document(FirebaseAuth.getInstance().getUid());
+                            docRef3.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                    if (task.isSuccessful()) {
+                                        DocumentSnapshot document = task.getResult();
+                                        if (document.exists()) {
+                                            Log.i("TAG2", "DocumentSnapshot data: " + document.getData());
 
+                                            Map<String, Object> x = document.getData();
+
+                                            mEndereco = x.get("endereco").toString();
+                                        }
+                                    }
+                                }
+                            });
+
+                        }
+                        if (rbt3.isChecked()){
+                            mData = "Combinado entre as partes";
+                            mHora = "Combinado entre as partes";
+                            mEndereco = "Combinado entre as partes";
+                            mTipoEntrega = "Combinado";
+                        }
+                        new CountDownTimer(8000, 1000) {
+                            @Override
+                            public void onTick(long l) {
+
+                            }
+
+                            @Override
+                            public void onFinish() {
+                                DoacaoComMatch doacao = new DoacaoComMatch(idDoacao, FirebaseAuth.getInstance().getUid(), mUserOng, mTipo, mQtd,
+                                        null, null, mDescricao, mFoto1, mFoto2, mFoto3, mStatus, mUnic_ouCamp,
+                                        mCategoria, mOrigem, mData, mHora, mEndereco, mTipoEntrega);
+
+                                FirebaseFirestore.getInstance().collection("Finalizadas")
+                                        .document(idDoacao)
+                                        .set(doacao)
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void aVoid) {
+                                                Log.i("yyyy", "Doacao Trocada no db");
+                                                Log.i("yyyy", idDoacao);
+                                                DocumentReference docRef4 = FirebaseFirestore.getInstance().collection("Aguardando").document(idDoacao);
+                                                docRef4.delete();
+                                            }
+                                        })
+
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                Log.i("Teste", e.getMessage());
+                                            }
+                                        });
+                            }
+                        }.start();
 
                     }
 
@@ -183,4 +249,5 @@ public class DoadorClickDoar extends AppCompatActivity {
             }
         });
     }
+
 }
