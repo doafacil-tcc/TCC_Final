@@ -28,7 +28,7 @@ public class DoadorSelecaoDoacaoUnicaBrinquedo extends AppCompatActivity {
     String mUserOng;
     String idItemDoacao;
     String mFoto2, mFoto3;
-    Button btnChat;
+    Button btnChat, btnDoar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +38,18 @@ public class DoadorSelecaoDoacaoUnicaBrinquedo extends AppCompatActivity {
         idItemDoacao = DoadorDoacaoUnicaFragment.id_Clicked_Brinquedo_doacao;
 
         btnChat = findViewById(R.id.btnChamarChatUnicaBrinquedo);
+        btnDoar = findViewById(R.id.btnAceitarDoacaoBrinquedo);
         btnChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 IniciarChat();
+            }
+        });
+
+        btnDoar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                IniciarDoacao();
             }
         });
 
@@ -75,6 +83,45 @@ public class DoadorSelecaoDoacaoUnicaBrinquedo extends AppCompatActivity {
                         User u = new User(id,nome,avatar,null,cep,email,tel,cnpj,endereco,site);
 
                         Intent i = new Intent(DoadorSelecaoDoacaoUnicaBrinquedo.this, ChatActivity.class);
+                        i.putExtra("id_outro", u.getUuid());
+                        i.putExtra("nome_outro", u.getUsername());
+                        i.putExtra("foto_outro", u.getProfileUrl());
+                        startActivity(i);
+
+                    }
+
+                }
+            }
+        });
+    }
+
+    private void IniciarDoacao() {
+
+        DocumentReference docRef2 = FirebaseFirestore.getInstance().collection("userONG").document(mUserOng);
+        docRef2.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        Log.i("TAG2", "DocumentSnapshot data: " + document.getData());
+
+                        Map<String, Object> x = document.getData();
+
+                        String nome = x.get("username").toString();
+                        String id = x.get("uuid").toString();
+                        String tel = x.get("telefone").toString();
+                        String site = x.get("site").toString();
+                        String avatar = x.get("profileUrl").toString();
+                        String endereco = x.get("endereco").toString();
+                        String email = x.get("email").toString();
+                        String cnpj = x.get("cnpj").toString();
+                        String cep = x.get("cep").toString();
+
+                        User u = new User(id,nome,avatar,null,cep,email,tel,cnpj,endereco,site);
+
+                        Intent i = new Intent(DoadorSelecaoDoacaoUnicaBrinquedo.this, DoadorClickDoar.class);
+                        i.putExtra("id_doacao", idItemDoacao);
                         i.putExtra("id_outro", u.getUuid());
                         i.putExtra("nome_outro", u.getUsername());
                         i.putExtra("foto_outro", u.getProfileUrl());

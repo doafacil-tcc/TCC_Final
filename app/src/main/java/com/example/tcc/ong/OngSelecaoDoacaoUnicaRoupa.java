@@ -3,13 +3,19 @@ package com.example.tcc.ong;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.tcc.Entities.ChatActivity;
+import com.example.tcc.Entities.User;
 import com.example.tcc.R;
 import com.example.tcc.doador.DoadorDoacaoUnicaFragment;
+import com.example.tcc.doador.DoadorSelecaoDoacaoUnicaRoupa;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
@@ -25,6 +31,7 @@ public class OngSelecaoDoacaoUnicaRoupa extends AppCompatActivity {
     String mUser;
     String idItem;
     String mFoto2, mFoto3;
+    Button btnChat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +40,54 @@ public class OngSelecaoDoacaoUnicaRoupa extends AppCompatActivity {
 
         idItem = OngFeedDoacaoFragment.id_Clicked_roupa;
 
+        btnChat = findViewById(R.id.btnChamarChatOngRoupa);
+
+        btnChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                IniciarChat();
+            }
+        });
+
         ColetaDadosRoupa();
 
+    }
+
+    private void IniciarChat() {
+
+        DocumentReference docRef2 = FirebaseFirestore.getInstance().collection("userDoador").document(mUser);
+        docRef2.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        Log.i("TAG2", "DocumentSnapshot data: " + document.getData());
+
+                        Map<String, Object> x = document.getData();
+
+                        String nome = x.get("username").toString();
+                        String id = x.get("uuid").toString();
+                        String tel = x.get("telefone").toString();
+                        String avatar = x.get("profileUrl").toString();
+                        String endereco = x.get("endereco").toString();
+                        String email = x.get("email").toString();
+                        String cpf = x.get("cpf").toString();
+                        String cep = x.get("cep").toString();
+
+                        User u = new User(id,nome,avatar,cpf,cep,email,tel,null,endereco,null);
+
+                        Intent i = new Intent(OngSelecaoDoacaoUnicaRoupa.this, ChatActivity.class);
+                        i.putExtra("id_outro", u.getUuid());
+                        i.putExtra("nome_outro", u.getUsername());
+                        i.putExtra("foto_outro", u.getProfileUrl());
+                        startActivity(i);
+
+                    }
+
+                }
+            }
+        });
     }
 
     private void ColetaDadosRoupa() {

@@ -16,10 +16,12 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.example.tcc.Entities.ChatActivity;
+import com.example.tcc.Entities.Doacao;
 import com.example.tcc.Entities.User;
 import com.example.tcc.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -30,7 +32,7 @@ import java.util.Map;
 public class DoadorSelecaoDoacaoUnicaRoupa extends AppCompatActivity {
 
     String mUserOng;
-    String idItemDoacao;
+    String idItemDoacao, mTipo, mQtd;
     String mFoto2, mFoto3;
     Button btnChat, btnDoar;
 
@@ -151,8 +153,8 @@ public class DoadorSelecaoDoacaoUnicaRoupa extends AppCompatActivity {
                         Map<String, Object> x = document.getData();
 
                         String mCategoria = x.get("categoria").toString();
-                        String mTipo = x.get("tipo").toString();
-                        String mQtd = x.get("qtd").toString();
+                        mTipo = x.get("tipo").toString();
+                        mQtd = x.get("qtd").toString();
                         String mDescricao = x.get("descricao").toString();
                         String mFoto1 = x.get("imgUrl1").toString();
                         if(x.get("imgUrl2") != null) {
@@ -168,6 +170,7 @@ public class DoadorSelecaoDoacaoUnicaRoupa extends AppCompatActivity {
                             mFoto3 = "00";
                         }
                         mUserOng = x.get("id_ong").toString();
+
 
                         TextView categoria = (TextView) findViewById(R.id.txtSelecaoRoupaDoadorCategoria);
                         TextView tipo = (TextView) findViewById(R.id.txtSelecaoRoupaDoadorTipo);
