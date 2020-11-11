@@ -45,6 +45,7 @@ public class ChatActivity extends AppCompatActivity {
     private EditText editText;
     private GroupAdapter adapter;
     private User me;
+    private LinearLayoutManager linearLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +73,10 @@ public class ChatActivity extends AppCompatActivity {
         toolbar.setTitle(mNomeOutro);
 
         adapter = new GroupAdapter();
-        rv.setLayoutManager(new LinearLayoutManager(this));
+        linearLayout = new  LinearLayoutManager(this);
+
+        rv.setLayoutManager(linearLayout);
+
         rv.setAdapter(adapter);
 
         String uid = FirebaseAuth.getInstance().getUid();

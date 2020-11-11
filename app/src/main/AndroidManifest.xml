@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ong.OngChat"/>
-        <activity android:name=".Entities.ChatActivity"/>
+        <activity android:name=".doador.DoadorClickDoar"></activity>
+        <activity android:name=".ong.OngChat" />
+        <activity android:name=".Entities.ChatActivity" />
         <activity android:name=".ong.OngMensagens" />
         <activity android:name=".Entities.MensagensActivity" />
         <activity android:name=".doador.DoadorSelecaoDoacaoUnicaLivros" />
