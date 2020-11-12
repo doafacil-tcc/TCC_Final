@@ -9,7 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".doador.DoadorClickDoar"></activity>
+        <activity android:name=".ong.OngConfirmarRecebimento"></activity>
+        <activity android:name=".ong.OngStatusDoacaoFinalizadas" />
+        <activity android:name=".ong.OngStatusDoacaoTransito" />
+        <activity android:name=".ong.OngStatusDoacaoEsperando" />
+        <activity android:name=".ong.OngStatusDoacao" />
+        <activity android:name=".doador.DoadorStatusDoacaoFinalizada" />
+        <activity android:name=".doador.DoadorStatusDoacaoTransito" />
+        <activity android:name=".doador.DoadorStatusDoacaoEsperando" />
+        <activity android:name=".doador.DoadorStatusDoacao" />
+        <activity android:name=".doador.DoadorClickDoar" />
         <activity android:name=".ong.OngChat" />
         <activity android:name=".Entities.ChatActivity" />
         <activity android:name=".ong.OngMensagens" />

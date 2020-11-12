@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".doador.DoadorStatusDoacao"
+    android:background="@color/Creme">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_statusDoacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/Laranja_Escuro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Status Doações"
+        app:titleTextColor="@color/Creme" />
+
+    <Button
+        android:id="@+id/btnStatus1"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="32dp"
+        android:background="@color/Laranja_Normal"
+        android:text="Doações em Espera"
+        android:textColor="@color/Creme"
+        android:textSize="@dimen/Small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_statusDoacao" />
+
+    <Button
+        android:id="@+id/btnStatus2"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="Doações em Transito"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnStatus1"
+        android:background="@color/Laranja_Normal"
+        android:textColor="@color/Creme"
+        android:textSize="@dimen/Small"/>
+
+    <Button
+        android:id="@+id/btnStatus3"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="Doações Concluídas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnStatus2"
+        android:background="@color/Laranja_Normal"
+        android:textColor="@color/Creme"
+        android:textSize="@dimen/Small"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

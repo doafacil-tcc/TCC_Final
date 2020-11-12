@@ -92,6 +92,7 @@ public class DoadorSelecaoDoacaoUnicaRoupa extends AppCompatActivity {
                         i.putExtra("nome_outro", u.getUsername());
                         i.putExtra("foto_outro", u.getProfileUrl());
                         startActivity(i);
+                        finish();
 
                     }
 
@@ -131,6 +132,7 @@ public class DoadorSelecaoDoacaoUnicaRoupa extends AppCompatActivity {
                         i.putExtra("nome_outro", u.getUsername());
                         i.putExtra("foto_outro", u.getProfileUrl());
                         startActivity(i);
+                        finish();
 
                     }
 

@@ -89,6 +89,7 @@ public class DoadorDoacaoUnicaFragment extends Fragment implements FeedDoacaoUni
             id_Clicked_roupa_doacao = snapshot.getId();
             Intent i = new Intent(getContext(), DoadorSelecaoDoacaoUnicaRoupa.class);
             startActivity(i);
+
         }
 
         if(snapshot.getCategoria().equals("Brinquedos")) {

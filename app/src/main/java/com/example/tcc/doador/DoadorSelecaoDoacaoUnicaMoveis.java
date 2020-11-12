@@ -88,6 +88,7 @@ public class DoadorSelecaoDoacaoUnicaMoveis extends AppCompatActivity {
                         i.putExtra("nome_outro", u.getUsername());
                         i.putExtra("foto_outro", u.getProfileUrl());
                         startActivity(i);
+                        finish();
 
                     }
 
@@ -127,7 +128,7 @@ public class DoadorSelecaoDoacaoUnicaMoveis extends AppCompatActivity {
                         i.putExtra("nome_outro", u.getUsername());
                         i.putExtra("foto_outro", u.getProfileUrl());
                         startActivity(i);
-
+                        finish();
                     }
 
                 }
