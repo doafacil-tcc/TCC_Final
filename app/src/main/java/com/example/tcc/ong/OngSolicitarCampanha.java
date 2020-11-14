@@ -37,9 +37,9 @@ import java.util.UUID;
 public class OngSolicitarCampanha extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     Spinner mSpnCategoria;
-    String spnCategoria, uid, titulo, descricao, breve_descricao, imagem1;
+    String spnCategoria, uid, titulo, descricao, breve_descricao, imagem1, limite_doacoes;
     EditText nQtndLimite, mTitulo, mDescricao, mBreveDescricao;
-    Integer limite;
+    int limite = 0;
     Button btnEnviarCampanha, btnFotoCampanha;
     ImageView imgCampanha;
     Uri mSelectedUri1;
@@ -82,10 +82,14 @@ public class OngSolicitarCampanha extends AppCompatActivity implements AdapterVi
                 titulo = mTitulo.getText().toString();
                 descricao = mDescricao.getText().toString();
                 breve_descricao = mBreveDescricao.getText().toString();
-//                limite = nQtndLimite.getText().length();
+                limite_doacoes = nQtndLimite.getText().toString();
+                if (!"".equals(limite_doacoes)){
+                    limite =Integer.parseInt(limite_doacoes);
+                }
+
 
                 if (uid.isEmpty() || spnCategoria.equals("Escolha...")
-                        || titulo.isEmpty() || descricao.isEmpty() || breve_descricao.isEmpty() || (mSelectedUri1 == null)) {
+                        || titulo.isEmpty() || "".equals(limite_doacoes) || descricao.isEmpty() || breve_descricao.isEmpty() || (mSelectedUri1 == null)) {
                     Toast.makeText(OngSolicitarCampanha.this, "Preencha tudo parça. TA LOKÃO?", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -111,7 +115,6 @@ public class OngSolicitarCampanha extends AppCompatActivity implements AdapterVi
                 });
 
                 final String idcampanha = UUID.randomUUID().toString();
-                int qtd_arrecadado = 0;
                 final String status = "Em Aberto";
                 final String unica_ou_camp = "campanha";
 
@@ -128,7 +131,7 @@ public class OngSolicitarCampanha extends AppCompatActivity implements AdapterVi
                     @Override
                     public void onFinish() {
 
-                        SolicitarCampanha campanha = new SolicitarCampanha(idcampanha, null, uid, titulo, 0, 0, descricao,
+                        SolicitarCampanha campanha = new SolicitarCampanha(idcampanha, null, uid, titulo, 0, limite, descricao,
                                 breve_descricao, imagem1, status, unica_ou_camp, spnCategoria);
 
                         FirebaseFirestore.getInstance().collection("Campanha")

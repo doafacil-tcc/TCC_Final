@@ -135,15 +135,15 @@ public class DoadorEditarPerfil extends AppCompatActivity {
                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                     if (task.isSuccessful()) {
                         DocumentSnapshot document = task.getResult();
-                        Log.i("kkk", document.toString());
+
                         assert document != null;
                         if (document.exists()) {
                             Map<String, Object> x = document.getData();
-                            Log.i("kkk", document.toString());
+
                             avatar_antigo = x.get("profileUrl");
-                            Log.i("kkkk", avatar_antigo.toString());
+
                             ref = FirebaseStorage.getInstance().getReferenceFromUrl(avatar_antigo.toString());
-                            Log.i("kkkkk", ref.toString());
+
                         }
                     }
                 }

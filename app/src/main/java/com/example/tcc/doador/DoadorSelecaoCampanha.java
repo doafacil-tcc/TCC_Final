@@ -5,8 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.tcc.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,6 +26,8 @@ public class DoadorSelecaoCampanha extends AppCompatActivity {
 
     String mOng;
     String idItemCampanha;
+    Button btnParticipar;
+    EditText qtd_doar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +35,51 @@ public class DoadorSelecaoCampanha extends AppCompatActivity {
         setContentView(R.layout.doador_activity_selecao_campanha);
 
         idItemCampanha = DoadorDoacoesCampanhaFragment.id_Clicked_campanha;
+        qtd_doar = findViewById(R.id.edtQuantidade);
+
+        btnParticipar = findViewById(R.id.btnAceitarCampanha);
+
+        btnParticipar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                IncrementarNaCampanha();
+            }
+        });
 
         ColetaDadosRoupaCampanha();
+    }
+
+    private void IncrementarNaCampanha() {
+
+        if (!qtd_doar.getText().toString().isEmpty()) {
+
+            final int doado = Integer.parseInt(qtd_doar.getText().toString());
+            Log.i("lklk", String.valueOf(doado));
+
+            DocumentReference docRef = FirebaseFirestore.getInstance().collection("Campanha").document(idItemCampanha);
+            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if (task.isSuccessful()) {
+                        DocumentSnapshot document = task.getResult();
+                        if (document.exists()) {
+
+                            int qtd_arrec = document.getLong("qtd_arrecadado").intValue();
+
+                            qtd_arrec = qtd_arrec + doado;
+
+                            Log.i("lklk", String.valueOf(qtd_arrec));
+
+                            FirebaseFirestore.getInstance().collection("Campanha").document(idItemCampanha)
+                                    .update("qtd_arrecadado", qtd_arrec);
+                        }
+                    }
+                }
+            });
+        }
+        else{
+            Toast.makeText(getApplicationContext(), "Coloque o número de itens", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void ColetaDadosRoupaCampanha() {

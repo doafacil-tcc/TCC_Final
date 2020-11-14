@@ -32,7 +32,7 @@ public class DoadorStatusDoacaoTransito extends AppCompatActivity {
 
         feedDoacoesEmTransito.addItemDecoration(new DividerItemDecoration(feedDoacoesEmTransito.getContext(), DividerItemDecoration.VERTICAL));
 
-    Query query = mFirebaseFirestore.collection("Finalizadas").whereEqualTo("origem", "Doador")
+    Query query = mFirebaseFirestore.collection("Finalizadas")
             .whereEqualTo("status", "Em_Transito")
             .whereEqualTo("id_user", FirebaseAuth.getInstance().getUid());
 

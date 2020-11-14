@@ -11,214 +11,236 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/txtCategoria"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="25dp"
-                android:text="Categoria:"
-                android:textColor="@color/Verde"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtTitulo" />
-
-
-            <TextView
-                android:id="@+id/txtTitulo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="Titulo:"
-                android:textColor="@color/Verde"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/txtCategoria"
-                app:layout_constraintTop_toBottomOf="@+id/imgSelecaoCampanha" />
-
-            <TextView
-                android:id="@+id/txtQuantidade"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Itens Arrecadados:"
-                android:textColor="@color/Verde"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/txtTitulo"
-                app:layout_constraintTop_toBottomOf="@+id/txtCategoria" />
+        <TextView
+            android:id="@+id/txtCategoria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="25dp"
+            android:text="Categoria:"
+            android:textColor="@color/Verde"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitulo" />
 
 
-            <TextView
-                android:id="@+id/txtDescricao"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Objetivo Campanha:"
-                android:textColor="@color/Verde"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/txtQuantidade"
-                app:layout_constraintTop_toBottomOf="@+id/txtQuantidade" />
+        <TextView
+            android:id="@+id/txtTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Titulo:"
+            android:textColor="@color/Verde"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txtCategoria"
+            app:layout_constraintTop_toBottomOf="@+id/imgSelecaoCampanha" />
 
-            <TextView
-                android:id="@+id/txtDoador"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Instituição/ONG:"
-                android:textColor="@color/Verde"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/txtSelecaoCampanhaDescrição"
-                app:layout_constraintTop_toBottomOf="@+id/txtSelecaoCampanhaDescrição" />
-
-            <TextView
-                android:id="@+id/txtEndereço"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Endereço:"
-                android:textColor="@color/Verde"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/txtDoador"
-                app:layout_constraintTop_toBottomOf="@+id/txtDoador" />
-
-            <Button
-                android:id="@+id/btnAceitarCampanha"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:layout_marginBottom="40dp"
-                android:background="@color/Laranja_Escuro"
-                android:text="Participar da Campanha"
-                android:textColor="#FFFFFF"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtSite" />
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/imgSelecaoCampanha"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_marginTop="24dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@tools:sample/avatars" />
-
-            <TextView
-                android:id="@+id/txtSelecaoCampanhaCategoria"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"
-                android:text="TextView"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="@+id/txtCategoria"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/txtCategoria"
-                app:layout_constraintTop_toTopOf="@+id/txtCategoria" />
-
-            <TextView
-                android:id="@+id/txtSelecaoCampanhaTitulo"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="15dp"
-                android:text="TextView"
-                android:textSize="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/txtTitulo"
-                app:layout_constraintTop_toTopOf="@+id/txtTitulo" />
-
-            <TextView
-                android:id="@+id/txtSelecaoCampanhaQuantidade"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"
-                android:text="TextView"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="@+id/txtQuantidade"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/txtQuantidade"
-                app:layout_constraintTop_toTopOf="@+id/txtQuantidade" />
+        <TextView
+            android:id="@+id/txtQuantidade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Itens Arrecadados:"
+            android:textColor="@color/Verde"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txtTitulo"
+            app:layout_constraintTop_toBottomOf="@+id/txtCategoria" />
 
 
-            <TextView
-                android:id="@+id/txtSelecaoCampanhaDoador"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"
-                android:text="TextView"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="@+id/txtDoador"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/txtDoador"
-                app:layout_constraintTop_toTopOf="@+id/txtDoador" />
+        <TextView
+            android:id="@+id/txtDescricao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Objetivo Campanha:"
+            android:textColor="@color/Verde"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txtQuantidade"
+            app:layout_constraintTop_toBottomOf="@+id/txtQuantidade" />
 
-            <TextView
-                android:id="@+id/txtSelecaoCampanhaEndereco"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="15dp"
-                android:text="TextView"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="@+id/txtEndereço"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/txtEndereço"
-                app:layout_constraintTop_toBottomOf="@+id/txtDoador" />
+        <TextView
+            android:id="@+id/txtDoador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Instituição/ONG:"
+            android:textColor="@color/Verde"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txtSelecaoCampanhaDescrição"
+            app:layout_constraintTop_toBottomOf="@+id/txtSelecaoCampanhaDescrição" />
 
-            <TextView
-                android:id="@+id/txtSelecaoCampanhaDescrição"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="15dp"
-                android:text="TextView"
-                android:textSize="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtDescricao" />
+        <TextView
+            android:id="@+id/txtEndereço"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Endereço:"
+            android:textColor="@color/Verde"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txtDoador"
+            app:layout_constraintTop_toBottomOf="@+id/txtDoador" />
 
-            <TextView
-                android:id="@+id/txtSite"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:textColor="@color/Verde"
-                android:text="Site:"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/txtEndereço"
-                app:layout_constraintTop_toBottomOf="@+id/txtEndereço" />
+        <Button
+            android:id="@+id/btnAceitarCampanha"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="@color/Laranja_Escuro"
+            android:text="Participar da Campanha"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
-            <TextView
-                android:id="@+id/txtSelecaoCampanhaSite"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:text="TextView"
-                android:textSize="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/txtSite"
-                app:layout_constraintTop_toTopOf="@+id/txtSite" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgSelecaoCampanha"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/txtSelecaoCampanhaCategoria"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:text="TextView"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtCategoria"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtCategoria"
+            app:layout_constraintTop_toTopOf="@+id/txtCategoria" />
+
+        <TextView
+            android:id="@+id/txtSelecaoCampanhaTitulo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="15dp"
+            android:text="TextView"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtTitulo"
+            app:layout_constraintTop_toTopOf="@+id/txtTitulo" />
+
+        <TextView
+            android:id="@+id/txtSelecaoCampanhaQuantidade"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:text="TextView"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtQuantidade"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtQuantidade"
+            app:layout_constraintTop_toTopOf="@+id/txtQuantidade" />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+        <TextView
+            android:id="@+id/txtSelecaoCampanhaDoador"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:text="TextView"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtDoador"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtDoador"
+            app:layout_constraintTop_toTopOf="@+id/txtDoador" />
+
+        <TextView
+            android:id="@+id/txtSelecaoCampanhaEndereco"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            android:text="TextView"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtEndereço"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtEndereço"
+            app:layout_constraintTop_toBottomOf="@+id/txtDoador" />
+
+        <TextView
+            android:id="@+id/txtSelecaoCampanhaDescrição"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:text="TextView"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDescricao" />
+
+        <TextView
+            android:id="@+id/txtSite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Site:"
+            android:textColor="@color/Verde"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txtEndereço"
+            app:layout_constraintTop_toBottomOf="@+id/txtEndereço" />
+
+        <TextView
+            android:id="@+id/txtSelecaoCampanhaSite"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="TextView"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtSite"
+            app:layout_constraintTop_toTopOf="@+id/txtSite" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quanto você deseja doar?"
+            android:textColor="@color/Verde"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/edtQuantidade"
+            app:layout_constraintStart_toStartOf="@+id/txtSite"
+            app:layout_constraintTop_toTopOf="@+id/edtQuantidade" />
+
+        <EditText
+            android:id="@+id/edtQuantidade"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:paddingLeft="10dp"
+            android:ems="10"
+            android:hint="Ex: 3"
+            android:inputType="number"
+            app:layout_constraintStart_toEndOf="@+id/textView13"
+            app:layout_constraintTop_toBottomOf="@+id/txtSelecaoCampanhaSite" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
 </FrameLayout>

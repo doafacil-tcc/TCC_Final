@@ -1,9 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ong.OngConfirmarRecebimento">
+    android:layout_width="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ong.OngConfirmarRecebimento"
+        android:background="@color/Creme">
+
+
+        <TextView
+            android:id="@+id/txtTitulo99"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="24dp"
+            android:text="Deseja confirmar recebimento da Doação?"
+            android:textColor="@color/Verde"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="30dp" />
+
+        <Button
+            android:id="@+id/buttonrecebido"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="128dp"
+            android:background="@color/Laranja_Normal"
+            android:text="Sim, Eu recebi!"
+            android:textColor="@color/Creme"
+            android:textSize="@dimen/Small"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/txttipo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="TextView"
+            android:textColor="@color/Verde"
+            app:layout_constraintStart_toStartOf="@+id/txtTitulo99"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitulo99"
+            android:textSize="@dimen/Small"/>
+
+        <TextView
+            android:id="@+id/txtquantidade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="TextView"
+            android:textColor="@color/Verde"
+            app:layout_constraintStart_toStartOf="@+id/txttipo"
+            app:layout_constraintTop_toBottomOf="@+id/txttipo"
+            android:textSize="@dimen/Small"/>
+
+        <TextView
+            android:id="@+id/txtdescricao"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:text="TextView"
+            android:textColor="@color/Verde"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/txtquantidade"
+            app:layout_constraintTop_toBottomOf="@+id/txtquantidade"
+            android:textSize="@dimen/Small" />
+
+        <TextView
+            android:id="@+id/txtnomedoador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="TextView"
+            android:textSize="@dimen/Small"
+            android:textColor="@color/Verde"
+            app:layout_constraintStart_toStartOf="@+id/txtdescricao"
+            app:layout_constraintTop_toBottomOf="@+id/txtdescricao" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

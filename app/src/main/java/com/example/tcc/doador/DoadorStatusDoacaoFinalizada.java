@@ -31,8 +31,8 @@ public class DoadorStatusDoacaoFinalizada extends AppCompatActivity {
 
         feedDoacoesFinalizadas.addItemDecoration(new DividerItemDecoration(feedDoacoesFinalizadas.getContext(), DividerItemDecoration.VERTICAL));
 
-        Query query = mFirebaseFirestore.collection("Finalizadas").whereEqualTo("origem", "Doador")
-                .whereEqualTo("status", "Finalizadas")
+        Query query = mFirebaseFirestore.collection("Finalizadas")
+                .whereEqualTo("status", "Finalizada")
                 .whereEqualTo("id_user", FirebaseAuth.getInstance().getUid());
 
         FirestoreRecyclerOptions<Doacao> options = new FirestoreRecyclerOptions.Builder<Doacao>()
@@ -44,7 +44,6 @@ public class DoadorStatusDoacaoFinalizada extends AppCompatActivity {
         feedDoacoesFinalizadas.setHasFixedSize(true);
         feedDoacoesFinalizadas.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         feedDoacoesFinalizadas.setAdapter(adapter);
-
     }
 
     @Override

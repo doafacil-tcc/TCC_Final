@@ -34,7 +34,7 @@ public class OngStatusDoacaoTransito extends AppCompatActivity implements FeedDo
 
         feedDoacoesEmTransito.addItemDecoration(new DividerItemDecoration(feedDoacoesEmTransito.getContext(), DividerItemDecoration.VERTICAL));
 
-        Query query = mFirebaseFirestore.collection("Finalizadas").whereEqualTo("origem", "ONG")
+        Query query = mFirebaseFirestore.collection("Finalizadas")
                 .whereEqualTo("status", "Em_Transito")
                 .whereEqualTo("id_ong", FirebaseAuth.getInstance().getUid());
 
@@ -47,7 +47,6 @@ public class OngStatusDoacaoTransito extends AppCompatActivity implements FeedDo
         feedDoacoesEmTransito.setHasFixedSize(true);
         feedDoacoesEmTransito.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         feedDoacoesEmTransito.setAdapter(adapter);
-
     }
 
     @Override
@@ -64,6 +63,7 @@ public class OngStatusDoacaoTransito extends AppCompatActivity implements FeedDo
     @Override
     public void onItemClickDoacao(Doacao snapshot, int position) {
         Intent i = new Intent(this, OngConfirmarRecebimento.class);
+        i.putExtra("id_doacao", snapshot.getId());
         startActivity(i);
     }
 }

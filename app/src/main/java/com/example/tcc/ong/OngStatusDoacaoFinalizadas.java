@@ -32,9 +32,9 @@ public class OngStatusDoacaoFinalizadas extends AppCompatActivity {
 
         feedDoacoesFinalizadas.addItemDecoration(new DividerItemDecoration(feedDoacoesFinalizadas.getContext(), DividerItemDecoration.VERTICAL));
 
-        Query query = mFirebaseFirestore.collection("Finalizadas").whereEqualTo("origem", "ONG")
-                .whereEqualTo("status", "Finalizadas")
-                .whereEqualTo("id_user", FirebaseAuth.getInstance().getUid());
+        Query query = mFirebaseFirestore.collection("Finalizadas")
+                .whereEqualTo("status", "Finalizada")
+                .whereEqualTo("id_ong", FirebaseAuth.getInstance().getUid());
 
         FirestoreRecyclerOptions<Doacao> options = new FirestoreRecyclerOptions.Builder<Doacao>()
                 .setQuery(query, Doacao.class)
