@@ -16,7 +16,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
-public class DoadorStatusDoacaoEsperando extends AppCompatActivity {
+public class DoadorStatusDoacaoEsperando extends AppCompatActivity implements FeedDoacaoUnicaAdapter.OnListItemClick{
 
     private RecyclerView feedDoacoesEmEspera;
     private FirebaseFirestore mFirebaseFirestore;
@@ -40,7 +40,7 @@ public class DoadorStatusDoacaoEsperando extends AppCompatActivity {
                 .setQuery(query, Doacao.class)
                 .build();
 
-        adapter = new FeedDoacaoUnicaAdapter(options,null);
+        adapter = new FeedDoacaoUnicaAdapter(options,this);
 
         feedDoacoesEmEspera.setHasFixedSize(true);
         feedDoacoesEmEspera.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
@@ -59,4 +59,8 @@ public class DoadorStatusDoacaoEsperando extends AppCompatActivity {
         adapter.startListening();
     }
 
+    @Override
+    public void onItemClickDoacao(Doacao snapshot, int position) {
+
+    }
 }

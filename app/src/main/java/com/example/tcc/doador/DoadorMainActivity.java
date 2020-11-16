@@ -89,6 +89,11 @@ public class DoadorMainActivity extends AppCompatActivity implements NavigationV
             startActivity(i);
         }
 
+        if(item.getItemId() == R.id.doacoes_aprovadas) {
+            Intent i = new Intent(com.example.tcc.doador.DoadorMainActivity.this, DoadorDoacaoAprovadas.class);
+            startActivity(i);
+        }
+
         return true;
     }
 }

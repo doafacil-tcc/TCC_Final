@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ong.OngConfirmarRecebimento"></activity>
+        <activity android:name=".ong.OngStatusCampanhaAberta"></activity>
+        <activity android:name=".ong.OngStatusCampanhaAbertaEspecifico" />
+        <activity android:name=".ong.OngStatusCampanha" />
+        <activity android:name=".ong.OngAceitacaoEnviada" />
+        <activity android:name=".doador.DoadorDoacaoAprovadas" />
+        <activity android:name=".ong.OngConfirmarRecebimento" />
         <activity android:name=".ong.OngStatusDoacaoFinalizadas" />
         <activity android:name=".ong.OngStatusDoacaoTransito" />
         <activity android:name=".ong.OngStatusDoacaoEsperando" />
@@ -19,9 +24,7 @@
         <activity android:name=".doador.DoadorStatusDoacaoEsperando" />
         <activity android:name=".doador.DoadorStatusDoacao" />
         <activity android:name=".doador.DoadorClickDoar" />
-        <activity android:name=".ong.OngChat" />
         <activity android:name=".Entities.ChatActivity" />
-        <activity android:name=".ong.OngMensagens" />
         <activity android:name=".Entities.MensagensActivity" />
         <activity android:name=".doador.DoadorSelecaoDoacaoUnicaLivros" />
         <activity android:name=".doador.DoadorSelecaoDoacaoUnicaMoveis" />

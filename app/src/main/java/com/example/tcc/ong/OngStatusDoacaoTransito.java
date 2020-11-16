@@ -67,3 +67,4 @@ public class OngStatusDoacaoTransito extends AppCompatActivity implements FeedDo
         startActivity(i);
     }
 }
+

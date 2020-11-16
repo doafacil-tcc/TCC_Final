@@ -27,7 +27,10 @@ public class DoacaoComMatch implements Parcelable {
 
 
 
-    public DoacaoComMatch(String id, String id_user, String id_ong, String tipo, String qtd, String tamanho, String condicao, String descricao, String imgUrl1, String imgUrl2, String imgUrl3, String status, String unica_ou_campanha, String categoria, String origem, String data, String hora, String endereco, String tipoEntrega) {
+    public DoacaoComMatch(String id, String id_user, String id_ong, String tipo, String qtd, String tamanho,
+                          String condicao, String descricao, String imgUrl1, String imgUrl2, String imgUrl3,
+                          String status, String unica_ou_campanha, String categoria, String origem, String data,
+                          String hora, String endereco, String tipoEntrega) {
         this.id = id;
         this.id_user = id_user;
         this.id_ong = id_ong;

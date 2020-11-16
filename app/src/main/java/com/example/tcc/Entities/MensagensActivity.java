@@ -45,6 +45,7 @@ public class MensagensActivity extends AppCompatActivity {
         final RecyclerView rv = findViewById(R.id.recycler_contact);
         rv.setLayoutManager(new LinearLayoutManager(this));
 
+
         rv.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
         adapter = new GroupAdapter();
@@ -58,7 +59,6 @@ public class MensagensActivity extends AppCompatActivity {
         });
 
         fetchLastMessage();
-
 
     }
 

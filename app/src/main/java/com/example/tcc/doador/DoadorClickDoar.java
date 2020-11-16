@@ -42,8 +42,8 @@ public class DoadorClickDoar extends AppCompatActivity {
     private RadioButton rbt1, rbt2, rbt3;
     private EditText data_pessoalmente, data_motorista, hora_hotorista, editText;;
     private Button btnEnviar;
-    private String idDoacao, idOng, nomeOng, fotoOng, mFoto2, mFoto3, mAvatar, mIdOutro, mNomeOutro, text, tipo_roupa, qtd_roupa;
-    private User me;
+    private String idDoacao, idOng, nomeOng, fotoOng, mFoto2, mFoto3, mAvatar, text;
+    private User doador, ong;
     private String mTipo, mQtd;
     String mData;
     String mHora;
@@ -69,12 +69,7 @@ public class DoadorClickDoar extends AppCompatActivity {
         idOng = getIntent().getStringExtra("id_outro");
         nomeOng = getIntent().getStringExtra("nome_outro");
         fotoOng = getIntent().getStringExtra("foto_outro");
-        tipo_roupa = getIntent().getStringExtra("tipo_roupa");
-        qtd_roupa = getIntent().getStringExtra("qtd_roupa");
 
-        mIdOutro =  getIntent().getStringExtra("id_outro");
-        mNomeOutro =  getIntent().getStringExtra("nome_outro");
-        mAvatar =  getIntent().getStringExtra("foto_outro");
 
         String uid = FirebaseAuth.getInstance().getUid();
         DocumentReference docRef = FirebaseFirestore.getInstance().collection("userDoador").document(uid);
@@ -89,8 +84,6 @@ public class DoadorClickDoar extends AppCompatActivity {
 
                         String  cpf = x.get("cpf").toString();
 
-                        Log.i("xxxxxcpf", cpf);
-
                         if(!cpf.isEmpty()){
                             FirebaseFirestore.getInstance().collection("/userDoador")
                                     .document(FirebaseAuth.getInstance().getUid())
@@ -98,9 +91,7 @@ public class DoadorClickDoar extends AppCompatActivity {
                                     .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                                         @Override
                                         public void onSuccess(DocumentSnapshot snapshot) {
-                                            me = snapshot.toObject(User.class);
-                                            Log.i("xxxxxdoador", "oi");
-
+                                            doador = snapshot.toObject(User.class);
                                         }});
                         }
                     }
@@ -120,8 +111,6 @@ public class DoadorClickDoar extends AppCompatActivity {
 
                         String  cnpj = x.get("cnpj").toString();
 
-                        Log.i("xxxxxcpf", cnpj);
-
                         if(!cnpj.isEmpty()){
                             FirebaseFirestore.getInstance().collection("/userONG")
                                     .document(FirebaseAuth.getInstance().getUid())
@@ -129,8 +118,7 @@ public class DoadorClickDoar extends AppCompatActivity {
                                     .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                                         @Override
                                         public void onSuccess(DocumentSnapshot snapshot) {
-                                            me = snapshot.toObject(User.class);
-                                            Log.i("xxxxxdoador", "oi");
+                                            ong = snapshot.toObject(User.class);
 
                                         }});
                         }
@@ -139,28 +127,15 @@ public class DoadorClickDoar extends AppCompatActivity {
             }
         });
 
-        Log.i("yyy", idDoacao);
-
 
         btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (rbt1.isChecked()  && !data_pessoalmente.getText().toString().isEmpty()){
-                        alterarDB();
 
-                    new CountDownTimer(10000, 1000) {
-                        @Override
-                        public void onTick(long l) {
+                    alterarDB();
 
-                        }
-
-                        @Override
-                        public void onFinish() {
-                            IniciarChat();
-                        }
-                    }.start();
-
-                    new CountDownTimer(9000, 1000) {
+                    new CountDownTimer(8000, 1000) {
                         @Override
                         public void onTick(long l) {
 
@@ -169,32 +144,19 @@ public class DoadorClickDoar extends AppCompatActivity {
                         @Override
                         public void onFinish() {
                             sendMessage();
-                            Toast.makeText(getApplicationContext(), "Doação Registrada com Sucesso!", Toast.LENGTH_SHORT).show();
+                            IniciarChat();
                         }
                     }.start();
-
-
                 }
                 else if(rbt1.isChecked()  && data_pessoalmente.getText().toString().isEmpty()) {
                     Toast.makeText(getApplicationContext(), "Preencha todos os Campos Necessários", Toast.LENGTH_SHORT).show();
                 }
 
                 if (rbt2.isChecked()  && !data_motorista.getText().toString().isEmpty() && !hora_hotorista.getText().toString().isEmpty()){
+
                     alterarDB();
 
-                    new CountDownTimer(10000, 1000) {
-                        @Override
-                        public void onTick(long l) {
-
-                        }
-
-                        @Override
-                        public void onFinish() {
-                            IniciarChat();
-                        }
-                    }.start();
-
-                    new CountDownTimer(9000, 1000) {
+                    new CountDownTimer(8000, 1000) {
                         @Override
                         public void onTick(long l) {
 
@@ -203,11 +165,11 @@ public class DoadorClickDoar extends AppCompatActivity {
                         @Override
                         public void onFinish() {
                             sendMessage();
-                            Toast.makeText(getApplicationContext(), "Doação Registrada com Sucesso!", Toast.LENGTH_SHORT).show();
+                            IniciarChat();
                         }
                     }.start();
                 }
-                else if(rbt2.isChecked()  && (data_motorista.getText().toString().isEmpty()) || hora_hotorista.getText().toString().isEmpty()){
+                else if(rbt2.isChecked()  && (data_motorista.getText().toString().isEmpty() || hora_hotorista.getText().toString().isEmpty())){
                     Toast.makeText(getApplicationContext(), "Preencha todos os Campos Necessários", Toast.LENGTH_SHORT).show();
                 }
 
@@ -242,8 +204,6 @@ public class DoadorClickDoar extends AppCompatActivity {
                 }
             }
         });
-
-
 
     }
 
@@ -330,7 +290,7 @@ public class DoadorClickDoar extends AppCompatActivity {
                             mEndereco = "Combinado entre as partes";
                             mTipoEntrega = "Combinado";
                         }
-                        new CountDownTimer(10000, 1000) {
+                        new CountDownTimer(8000, 1000) {
                             @Override
                             public void onTick(long l) {
 
@@ -348,10 +308,9 @@ public class DoadorClickDoar extends AppCompatActivity {
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
                                             public void onSuccess(Void aVoid) {
-                                                Log.i("yyyy", "Doacao Trocada no db");
-                                                Log.i("yyyy", idDoacao);
                                                 DocumentReference docRef4 = FirebaseFirestore.getInstance().collection("Aguardando").document(idDoacao);
                                                 docRef4.delete();
+                                                Toast.makeText(getApplicationContext(), "Doação Registrada com Sucesso!", Toast.LENGTH_SHORT).show();
                                             }
                                         })
 
@@ -363,14 +322,12 @@ public class DoadorClickDoar extends AppCompatActivity {
                                         });
                             }
                         }.start();
-
                     }
-
                 }
             }
         });
-    }
 
+    }
 
 
     private void IniciarChat() {
@@ -382,7 +339,6 @@ public class DoadorClickDoar extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
-                        Log.i("TAG2", "DocumentSnapshot data: " + document.getData());
 
                         Map<String, Object> x = document.getData();
 
@@ -410,13 +366,14 @@ public class DoadorClickDoar extends AppCompatActivity {
         });
     }
 
+
     private void sendMessage() {
 
         text = "Olá " + nomeOng + ". Realizei a doação de " + mQtd + " " + mTipo + ". A data da entrega será no dia: " + mData + ". Ás " + mHora + ". E será entregue " + mTipoEntrega + ". Obrigado";
 
         final String fromId = FirebaseAuth.getInstance().getUid();
-        final String toId = mIdOutro;
-        final String nome = mNomeOutro;
+        final String toId = idOng;
+        final String nome = nomeOng;
         long timestamp = System.currentTimeMillis();
 
         final Message message = new Message();
@@ -433,11 +390,10 @@ public class DoadorClickDoar extends AppCompatActivity {
                     .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                         @Override
                         public void onSuccess(DocumentReference documentReference) {
-                            Log.i("chatvaivai", documentReference.getId());
 
                             Contact contact = new Contact();
                             contact.setUuid(toId);
-                            contact.setUsername(mAvatar);
+                            contact.setUsername(nome);
                             contact.setPhotoUrl(fotoOng);
                             contact.setTimestamp(message.getTimestamp());
                             contact.setLastMessage(message.getText());
@@ -457,12 +413,11 @@ public class DoadorClickDoar extends AppCompatActivity {
                     .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                         @Override
                         public void onSuccess(DocumentReference documentReference) {
-                            Log.i("chatvaivai", documentReference.getId());
 
                             Contact contact = new Contact();
                             contact.setUuid(fromId);
-                            contact.setUsername(me.getUsername());
-                            contact.setPhotoUrl(me.getProfileUrl());
+                            contact.setUsername(doador.getUsername());
+                            contact.setPhotoUrl(doador.getProfileUrl());
                             contact.setTimestamp(message.getTimestamp());
                             contact.setLastMessage(message.getText());
 

@@ -16,6 +16,7 @@ import com.example.tcc.Entities.User;
 import com.example.tcc.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -28,7 +29,7 @@ public class OngSelecaoDoacaoUnicaLivros extends AppCompatActivity {
     String mUser;
     String idItem;
     String mFoto2, mFoto3;
-    Button btnChat;
+    Button btnChat, btnAceitar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,7 @@ public class OngSelecaoDoacaoUnicaLivros extends AppCompatActivity {
         idItem = OngFeedDoacaoFragment.id_Clicked_Livros;
 
         btnChat = findViewById(R.id.btnChamarChatOngLivros);
+        btnAceitar = findViewById(R.id.btnAceitarDoacaoLivros);
 
         btnChat.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +48,25 @@ public class OngSelecaoDoacaoUnicaLivros extends AppCompatActivity {
             }
         });
 
+        btnAceitar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AceitarDoacao();
+            }
+        });
+
         ColetaDadosLivros();
+
+    }
+
+    private void AceitarDoacao() {
+
+        FirebaseFirestore.getInstance().collection("Aguardando").document(idItem).update("id_ong", FirebaseAuth.getInstance().getUid());
+        FirebaseFirestore.getInstance().collection("Aguardando").document(idItem).update("status", "Pendente");
+
+        Intent i = new Intent(OngSelecaoDoacaoUnicaLivros.this, OngAceitacaoEnviada.class);
+        startActivity(i);
+        finish();
 
     }
 

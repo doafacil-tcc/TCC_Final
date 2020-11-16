@@ -50,7 +50,9 @@ public class OngFeedDoacaoFragment extends Fragment implements FeedOngAdapter.On
 
         feedDoacoesOng.addItemDecoration(new DividerItemDecoration(feedDoacoesOng.getContext(), DividerItemDecoration.VERTICAL));
 
-        Query query = mFirebaseFirestore.collection("Aguardando").whereEqualTo("origem", "Doador");
+        Query query = mFirebaseFirestore.collection("Aguardando")
+                .whereEqualTo("origem", "Doador")
+                .whereEqualTo("status", "Aguardando");
 
         FirestoreRecyclerOptions<Doacao> options = new FirestoreRecyclerOptions.Builder<Doacao>()
                 .setQuery(query, Doacao.class)

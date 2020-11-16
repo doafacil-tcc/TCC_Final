@@ -84,6 +84,12 @@ public class OngMainActivity extends AppCompatActivity implements NavigationView
             startActivity(i);
 
         }
+        if (item.getItemId() == R.id.ong){
+
+            Intent i = new Intent(com.example.tcc.ong.OngMainActivity.this, OngStatusCampanha.class);
+            startActivity(i);
+
+        }
         return true;
     }
 }
