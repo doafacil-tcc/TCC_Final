@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ong.OngStatusCampanhaAberta"></activity>
+        <activity android:name=".doador.DoadorClickCampanha"></activity>
+        <activity android:name=".ong.OngStatusCampanhaAberta" />
         <activity android:name=".ong.OngStatusCampanhaAbertaEspecifico" />
         <activity android:name=".ong.OngStatusCampanha" />
         <activity android:name=".ong.OngAceitacaoEnviada" />

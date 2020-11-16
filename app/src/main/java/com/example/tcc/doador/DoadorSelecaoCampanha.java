@@ -74,14 +74,15 @@ public class DoadorSelecaoCampanha extends AppCompatActivity {
                             String nomeUser = x.get("username").toString();
 
                             Doacao increment_campanha = new Doacao(idItemCampanha, FirebaseAuth.getInstance().getUid(), mIdOng, "null",
-                                    qtd_doar.getText().toString(), "null", "null", nomeUser, mFoto1, "null", "null", "null", "campanha", mCategoria, temp);
+                                    qtd_doar.getText().toString(), "null", "null", nomeUser, mFoto1, "null", "null",
+                                    "null", "campanha", mCategoria, temp);
                             FirebaseFirestore.getInstance().collection("Aguardando")
                                     .document(idItemCampanha + temp)
                                     .set(increment_campanha)
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void aVoid) {
-                                            Intent i = new Intent(DoadorSelecaoCampanha.this, DoadorClickDoar.class);
+                                            Intent i = new Intent(DoadorSelecaoCampanha.this, DoadorClickCampanha.class);
                                             i.putExtra("id_doacao", idItemCampanha+temp);
                                             i.putExtra("id_outro", mIdOng);
                                             i.putExtra("nome_outro", mNomeOng);
