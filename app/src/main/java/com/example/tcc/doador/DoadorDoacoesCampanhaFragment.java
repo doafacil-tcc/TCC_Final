@@ -80,9 +80,8 @@ public class DoadorDoacoesCampanhaFragment extends Fragment implements FeedCampa
     @Override
     public void onItemClickCampanha(SolicitarCampanha snapshot, int position) {
 
-            Log.i("Item_Clicked", snapshot.getCategoria());
-            id_Clicked_campanha = snapshot.getId_campanha();
             Intent i = new Intent(getContext(), DoadorSelecaoCampanha.class);
+            i.putExtra("id_campanha", snapshot.getId_campanha());
             startActivity(i);
 
     }

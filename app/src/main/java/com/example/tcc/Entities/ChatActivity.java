@@ -56,6 +56,7 @@ public class ChatActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar_chat_doador);
         editText = findViewById(R.id.edit_chat_doador);
         Button btnChatDoador = findViewById(R.id.btn_chat_doador);
+
         btnChatDoador.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,10 +64,7 @@ public class ChatActivity extends AppCompatActivity {
             }
         });
 
-
-
         mIdOutro =  getIntent().getStringExtra("id_outro");
-        Log.i("xxxxx", mIdOutro);
         mNomeOutro =  getIntent().getStringExtra("nome_outro");
         mAvatar =  getIntent().getStringExtra("foto_outro");
 
@@ -124,7 +122,6 @@ public class ChatActivity extends AppCompatActivity {
 
                         String  cnpj = x.get("cnpj").toString();
 
-                        Log.i("xxxxxcpf", cnpj);
 
                         if(!cnpj.isEmpty()){
                             FirebaseFirestore.getInstance().collection("/userONG")

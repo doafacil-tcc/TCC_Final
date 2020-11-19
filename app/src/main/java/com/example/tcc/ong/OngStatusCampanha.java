@@ -32,7 +32,7 @@ public class OngStatusCampanha extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(OngStatusCampanha.this, OngStatusDoacaoTransito.class);
+                Intent i = new Intent(OngStatusCampanha.this, OngStatusCampanhaFinalizada.class);
                 startActivity(i);
             }
         });

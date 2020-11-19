@@ -9,7 +9,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.tcc.Entities.Doacao;
@@ -31,7 +33,9 @@ public class OngStatusCampanhaAbertaEspecifico extends AppCompatActivity impleme
     private FirebaseFirestore mFirebaseFirestore;
     private FirestoreRecyclerAdapter adapter;
     private TextView qtd_atual, qtd_limite;
-    private String idCampanha, tituloCamapnha, qtdArrec, qtdLimi;
+    private EditText edtValor_ext;
+    private String idCampanha, tituloCamapnha, qtdArrec, qtdLimi, idDoador, valor_externo;
+    private Button btnAdicExt, btnEncerrarCampanha;
 
 
     @Override
@@ -43,6 +47,53 @@ public class OngStatusCampanhaAbertaEspecifico extends AppCompatActivity impleme
         Toolbar toolbar = findViewById(R.id.toolbar_statusCampanhaAberta);
         qtd_atual = findViewById(R.id.textView16);
         qtd_limite = findViewById(R.id.textView17);
+        edtValor_ext = findViewById(R.id.editTextNumber);
+        btnAdicExt = findViewById(R.id.btcEnviarItens);
+        btnEncerrarCampanha = findViewById(R.id.button3);
+
+        btnAdicExt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                valor_externo = edtValor_ext.getText().toString();
+                final int adic_ext = Integer.parseInt(valor_externo);
+                DocumentReference docRef = FirebaseFirestore.getInstance().collection("Campanha").document(idCampanha);
+                docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+
+                                int qtd_arrec = document.getLong("qtd_arrecadado").intValue();
+                                idDoador = document.getString("id_user");
+
+                                qtd_arrec = qtd_arrec + adic_ext;
+
+                                FirebaseFirestore.getInstance().collection("Campanha").document(idCampanha)
+                                        .update("qtd_arrecadado", qtd_arrec);
+
+                                Intent i = new Intent(OngStatusCampanhaAbertaEspecifico.this, OngStatusCampanhaAberta.class);
+                                startActivity(i);
+                                finish();
+                            }
+                        }
+                    }
+                });
+            }
+        });
+
+        btnEncerrarCampanha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseFirestore.getInstance().collection("Campanha").document(idCampanha)
+                        .update("status", "Finalizada");
+                Intent i = new Intent(OngStatusCampanhaAbertaEspecifico.this, OngStatusCampanhaAberta.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
 
         idCampanha = getIntent().getStringExtra("id_campanha");
         tituloCamapnha = getIntent().getStringExtra("titulo_camapanha");
@@ -99,15 +150,12 @@ public class OngStatusCampanhaAbertaEspecifico extends AppCompatActivity impleme
                     if (document.exists()) {
 
                         int qtd_arrec = document.getLong("qtd_arrecadado").intValue();
+                        idDoador = document.getString("id_user");
 
                         qtd_arrec = qtd_arrec + qtd_adic;
 
                         FirebaseFirestore.getInstance().collection("Campanha").document(idCampanha)
                                 .update("qtd_arrecadado", qtd_arrec);
-
-                        FirebaseFirestore.getInstance().collection("Campanha").document(idCampanha)
-                                .update("qtd_arrecadado", qtd_arrec);
-
 
                     }
                 }
@@ -115,6 +163,10 @@ public class OngStatusCampanhaAbertaEspecifico extends AppCompatActivity impleme
         });
         DocumentReference docRef2 = FirebaseFirestore.getInstance().collection("Aguardando").document(idCampanha + time);
         docRef2.delete();
+        FirebaseFirestore.getInstance().collection("Finalizadas").document(idCampanha + time)
+                .update("status", "Finalizada");
+
+
 
         Intent i = new Intent(OngStatusCampanhaAbertaEspecifico.this, OngStatusCampanhaAberta.class);
         startActivity(i);
