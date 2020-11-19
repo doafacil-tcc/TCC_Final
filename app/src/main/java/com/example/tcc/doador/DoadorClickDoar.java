@@ -135,7 +135,7 @@ public class DoadorClickDoar extends AppCompatActivity {
 
                     alterarDB();
 
-                    new CountDownTimer(8000, 1000) {
+                    new CountDownTimer(3000, 1000) {
                         @Override
                         public void onTick(long l) {
 
@@ -156,7 +156,7 @@ public class DoadorClickDoar extends AppCompatActivity {
 
                     alterarDB();
 
-                    new CountDownTimer(8000, 1000) {
+                    new CountDownTimer(3000, 1000) {
                         @Override
                         public void onTick(long l) {
 
@@ -290,7 +290,7 @@ public class DoadorClickDoar extends AppCompatActivity {
                             mEndereco = "Combinado entre as partes";
                             mTipoEntrega = "Combinado";
                         }
-                        new CountDownTimer(8000, 1000) {
+                        new CountDownTimer(3000, 1000) {
                             @Override
                             public void onTick(long l) {
 

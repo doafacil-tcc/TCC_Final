@@ -86,8 +86,8 @@ public class DoadorDoacaoAprovadas extends AppCompatActivity implements FeedDoac
 
                         Intent i = new Intent(DoadorDoacaoAprovadas.this, DoadorClickDoar.class);
                         i.putExtra("id_doacao", snapshot.getId());
-                        i.putExtra("id_outro", nome_ong);
-                        i.putExtra("nome_outro", id_ong);
+                        i.putExtra("id_outro", id_ong);
+                        i.putExtra("nome_outro", nome_ong);
                         i.putExtra("foto_outro", foto_ong);
                         startActivity(i);
                     }
