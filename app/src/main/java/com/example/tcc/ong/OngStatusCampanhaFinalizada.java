@@ -25,7 +25,7 @@ public class OngStatusCampanhaFinalizada extends AppCompatActivity implements Fe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ong_status_campanha_finalizada);
+        setContentView(R.layout.ong_activity_status_campanha_finalizada);
         mFirebaseFirestore = FirebaseFirestore.getInstance();
         feedCampanhaFinalizada = findViewById(R.id.recycler_Campanha_Finalizada);
 
